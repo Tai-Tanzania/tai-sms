@@ -17,7 +17,7 @@ class SMSController extends Controller
             'source_addr' => env('BEEM_SOURCE_ADDRESS'),
             'encoding'=> 0,
             'schedule_time' => '',
-            'message' => 'Hello World',
+            'message' => 'Hello Man',
             'recipients' => [
                 array('recipient_id' => '1','dest_addr'=>'255782835136')
                 ]
