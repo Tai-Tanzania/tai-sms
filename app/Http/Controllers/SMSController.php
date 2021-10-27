@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Http;
 class SMSController extends Controller
 {
     public function sendSMS(){
-        
+
         $response = Http::withHeaders([
-            'Authorization:Basic' =>  base64_encode("24c3943f93fb04b2:NzRiYWRiZWM4NGE3ZTY4MjMxZDZkZjA2ZjRiY2JmNWE2NzE0ZmUzYTM5MmFmZDFkZGEyNzE4N2YyODJlMjM0ZQ=="),
+            'Basic Auth' =>  base64_encode("24c3943f93fb04b2:NzRiYWRiZWM4NGE3ZTY4MjMxZDZkZjA2ZjRiY2JmNWE2NzE0ZmUzYTM5MmFmZDFkZGEyNzE4N2YyODJlMjM0ZQ=="),
             'Content-Type' => 'application/json'
         ])->post('https://apisms.beem.africa/v1/send', [
             'source_addr' => '15320',
