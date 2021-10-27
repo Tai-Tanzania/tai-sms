@@ -10,17 +10,15 @@ class SMSController extends Controller
 {
     public function sendSMS(){
 
-        $api_key= env('BEEM_API_KEY');
-        $secret_key = env('BEEM_SECRET_KEY');
+        $api_key='24c3943f93fb04b2';
+        $secret_key = 'NzRiYWRiZWM4NGE3ZTY4MjMxZDZkZjA2ZjRiY2JmNWE2NzE0ZmUzYTM5MmFmZDFkZGEyNzE4N2YyODJlMjM0ZQ==';
 
         $postData = array(
-            'source_addr' => env('BEEM_SOURCE_ADDRESS'),
-            'encoding'=> 0,
+            'source_addr' => '15320',
+            'encoding'=>0,
             'schedule_time' => '',
             'message' => 'Hello Man',
-            'recipients' => [
-                array('recipient_id' => '1','dest_addr'=>'255782835136')
-                ]
+            'recipients' => [array('recipient_id' => '1','dest_addr'=>'255782835136')]
         );
 
         $Url ='https://apisms.beem.africa/v1/send';
