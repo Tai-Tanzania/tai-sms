@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Http;
+use App\Models\Message;
 
 class SMSController extends Controller
 {
     public function sendSMS(){
 
-        $api_key='24c3943f93fb04b2';
-        $secret_key = 'NzRiYWRiZWM4NGE3ZTY4MjMxZDZkZjA2ZjRiY2JmNWE2NzE0ZmUzYTM5MmFmZDFkZGEyNzE4N2YyODJlMjM0ZQ==';
+        $api_key= env('BEEM_API_KEY');
+        $secret_key = env('BEEM_SECRET_KEY');
 
         $postData = array(
-            'source_addr' => '15320',
+            'source_addr' => env('BEEM_SOURCE_ADDRESS'),
             'encoding'=>0,
             'schedule_time' => '',
             'message' => 'Hello Man',
@@ -49,8 +50,6 @@ class SMSController extends Controller
 
     }
 
-
-
     public function callback(Request $request){
         $validator = Validator::make($request->all(), [
            'MESSAGE' => 'required',
@@ -71,6 +70,15 @@ class SMSController extends Controller
         $destaddr = $request->DESTADDR;
         $sourceaddnpi = $request->SOURCEADDRNPI;
         $sourceaddrton =  $request->SOURCEADDRTON;
+
+        Message::create([
+            'from' => $from,
+            'sms' => $message,
+            'vp' =>  $vp,
+            'destaddr' => $destaddr,
+            'sourceaddnpi' => $sourceaddnpi,
+            'sourceaddrton' => $sourceaddrton
+        ]);
 
         return response()->json('Success', 200);
     }
