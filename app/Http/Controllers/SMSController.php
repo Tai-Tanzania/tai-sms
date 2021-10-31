@@ -9,7 +9,7 @@ use App\Models\Message;
 
 class SMSController extends Controller
 {
-    public function sendSMS(){
+    public function sendSMS(Request $request){
 
         $api_key= env('BEEM_API_KEY');
         $secret_key = env('BEEM_SECRET_KEY');
@@ -18,8 +18,8 @@ class SMSController extends Controller
             'source_addr' => env('BEEM_SOURCE_ADDRESS'),
             'encoding'=>0,
             'schedule_time' => '',
-            'message' => 'Hello Man',
-            'recipients' => [array('recipient_id' => '1','dest_addr'=>'255782835136')]
+            'message' => $request->message,
+            'recipients' => [array('recipient_id' => '1','dest_addr'=> $request->phone)]
         );
 
         $Url ='https://apisms.beem.africa/v1/send';
