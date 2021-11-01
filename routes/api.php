@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('sms-callback', [SMSController::class,'callback']);
 Route::post('send-sms',[SMSController::class,'sendSMS']);
+Route::get('messages',[SMSController::class,'getAllSMS']);

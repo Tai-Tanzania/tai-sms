@@ -50,6 +50,11 @@ class SMSController extends Controller
 
     }
 
+    public function getAllSMS(){
+        $messages = Message::all();
+        return \response()->json($messages, 200);
+    }
+
     public function callback(Request $request){
         $validator = Validator::make($request->all(), [
            'MESSAGE' => 'required',
