@@ -17,10 +17,8 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->string('from');
             $table->string('sms');
-            $table->string('vp');
-            $table->string('destaddr');
-            $table->string('sourceaddnpi');
-            $table->string('sourceaddrton');
+            $table->string('to');
+            $table->string('transaction_id');
             $table->timestamps();
         });
     }

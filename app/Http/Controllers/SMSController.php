@@ -55,6 +55,26 @@ class SMSController extends Controller
         return \response()->json($messages, 200);
     }
 
+    public function secondCallback(Request $request){
+        $data = file_get_contents('https://tai-sms.herokuapp.com/api/sms-callback');
+
+        $data = json_decode($data, true);
+            $source_addr=$data['from'];
+            $dest_addr=$data['to'];
+            $channel=$data['channel'];
+            $timestamp=$data['timeUTC'];
+            $id=$data['transaction_id'];
+            $message=$data['message']['text'];
+            $billing=$data['billing'];
+
+            Message::create([
+                'from' => $from,
+                'sms' => $message,
+                'to' =>  $dest_addr,
+                'transaction_id' => $id,
+            ]);
+    }
+
     public function callback(Request $request){
         $validator = Validator::make($request->all(), [
            'MESSAGE' => 'required',

@@ -10,6 +10,6 @@ class Message extends Model
     use HasFactory;
 
     protected $fillable = [
-        'from', 'vp', 'sms', 'destaddr', 'sourceaddnpi', 'sourceaddrton'
+        'from', 'to', 'sms', 'transaction_id'
     ];
 }
