@@ -56,22 +56,23 @@ class SMSController extends Controller
     }
 
     public function secondCallback(Request $request){
-        $data = file_get_contents('https://tai-sms.herokuapp.com/api/sms-callback');
+        // $data = file_get_contents('https://tai-sms.herokuapp.com/api/sms-callback');
 
-        $data = json_decode($data, true);
-            $source_addr=$data['from'];
-            $dest_addr=$data['to'];
-            $channel=$data['channel'];
-            $timestamp=$data['timeUTC'];
-            $id=$data['transaction_id'];
-            $message=$data['message']['text'];
-            $billing=$data['billing'];
+        // $data = json_decode($data, true);
+        //     $source_addr=$data['from'];
+        //     $dest_addr=$data['to'];
+        //     $channel=$data['channel'];
+        //     $timestamp=$data['timeUTC'];
+        //     $id=$data['transaction_id'];
+        //     $message=$data['message']['text'];
+        //     $billing=$data['billing'];
 
+            //inserts to DB
             Message::create([
-                'from' => $from,
-                'sms' => $message,
-                'to' =>  $dest_addr,
-                'transaction_id' => $id,
+                'from' => $request->input('from'),
+                'sms' => $request->input('message.text'),
+                'to' =>  $request->input('to'),
+                'transaction_id' => $request->input('transaction_id'),
             ]);
     }
 
