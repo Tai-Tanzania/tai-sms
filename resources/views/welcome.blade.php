@@ -10,24 +10,24 @@
     <meta name="description" content="">
     <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
     <!-- custom.css -->
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="css/custom.css">
     <!-- bootstrap.min.css -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- font-awesome -->
-    <link rel="stylesheet" href="{{ asset('font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     
     <!-- AOS -->
-    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+    <link rel="stylesheet" href="css/aos.css">
 </head>
 
 <body>
     <!-- banner -->
-    <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url({{ url('img/tai-kids.png') }});">
+    <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url('img/tai-kids.png')">
         <div class="container text-center text-md-left">
             <header>
                 <div class="row justify-content-between">
                     <div class="col-2">
-                        <img src="{{ asset('img/tailogowhite.png') }}" alt="logo" style="max-width: 200px">
+                        <img src="img/tailogowhite.png" alt="logo" style="max-width: 200px">
                     </div>
                     <div class="col-6 align-self-center text-right">
                         <a href="#" id="chat" class="text-white lead">Text Us Now</a>
@@ -113,28 +113,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ asset('home/img/client-1.png') }}" class="mx-auto d-block">
+                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
                 </div>
                 <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ asset('home/img/client-1.png') }}" class="mx-auto d-block">
+                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
                 </div>
                 <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ asset('home/img/client-1.png') }}" class="mx-auto d-block">
+                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
                 </div>
                 <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ asset('home/img/client-1.png') }}" class="mx-auto d-block">
+                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
                 </div>
                 <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ asset('home/img/client-1.png') }}" class="mx-auto d-block">
+                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
                 </div>
                 <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ asset('home/img/client-1.png') }}" class="mx-auto d-block">
+                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
                 </div>
             </div>
         </div>
     </div> --}}
     <!-- contact -->
-    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url({{ url('img/contact-bk.jpg') }});">
+    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url('img/contact-bk.jpg');">
         <div class="container my-5">
             <div class="row justify-content-between">
                 <div class="col-md-12 text-white">
@@ -190,7 +190,7 @@
     </div>
     
     <!-- AOS -->
-    <script src="{{ url('js/aos.js') }}"></script>
+    <script src="js/aos.js"></script>
     <script>
       AOS.init({
       });
