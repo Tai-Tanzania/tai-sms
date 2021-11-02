@@ -17,7 +17,7 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Messages
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                               0
+                               {{ count($messages) }}
                             </div>
                         </div>
                         <div class="col-auto">
@@ -36,7 +36,7 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Beneficiaries
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                               0
+                               {{ count($users) }}
                             </div>
                         </div>
                         <div class="col-auto">
