@@ -10,24 +10,24 @@
     <meta name="description" content="">
     <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
     <!-- custom.css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('https://tai-sms.herokuapp.com/home/css/custom.css/home/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <!-- bootstrap.min.css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('https://tai-sms.herokuapp.com/home/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 	<!-- font-awesome -->
-    <link rel="stylesheet" href="{{ asset('https://tai-sms.herokuapp.com/home/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('font-awesome-4.7.0/css/font-awesome.min.css') }}">
     
     <!-- AOS -->
-    <link rel="stylesheet" href="{{ asset('https://tai-sms.herokuapp.com/home/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
 </head>
 
 <body>
     <!-- banner -->
-    <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url({{ url('tai-kids.png') }});">
+    <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url({{ url('img/tai-kids.png') }});">
         <div class="container text-center text-md-left">
             <header>
                 <div class="row justify-content-between">
                     <div class="col-2">
-                        <img src="{{ asset('tailogowhite.png') }}" alt="logo" style="max-width: 200px">
+                        <img src="{{ asset('img/tailogowhite.png') }}" alt="logo" style="max-width: 200px">
                     </div>
                     <div class="col-6 align-self-center text-right">
                         <a href="#" id="chat" class="text-white lead">Text Us Now</a>
@@ -85,7 +85,7 @@
                     {{-- <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a> --}}
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
-                    <img src="{{ asset('Lucy_promo.png') }}" style="margin-top: -20px; max-width: 350px" alt="..." class="mx-auto d-block">
+                    <img src="{{ asset('img/Lucy_promo.png') }}" style="margin-top: -20px; max-width: 350px" alt="..." class="mx-auto d-block">
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@
                     {{-- <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a> --}}
                 </div>
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center flex-md-first">
-                    <img src="{{ asset('Zongwe_promo.png') }}" style="max-width: 300px" alt="Safe and reliable" class="mx-auto d-block">
+                    <img src="{{ asset('img/Zongwe_promo.png') }}" style="max-width: 300px" alt="Safe and reliable" class="mx-auto d-block">
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
         </div>
     </div> --}}
     <!-- contact -->
-    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url({{ url('home/img/contact-bk.jpg') }});">
+    <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url({{ url('img/contact-bk.jpg') }});">
         <div class="container my-5">
             <div class="row justify-content-between">
                 <div class="col-md-12 text-white">
@@ -190,7 +190,7 @@
     </div>
     
     <!-- AOS -->
-    <script src="{{ asset('https://tai-sms.herokuapp.com/home/js/aos.js') }}"></script>
+    <script src="{{ url('js/aos.js') }}"></script>
     <script>
       AOS.init({
       });
