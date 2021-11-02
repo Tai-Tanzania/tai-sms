@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         {{ env('APP_NAME') }}
     </title>
     <meta name="description" content="">
     <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
     <!-- custom.css -->
-    <link rel="stylesheet" href="{{ asset('home/css/custom.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('home/css/custom.css') }}">
     <!-- bootstrap.min.css -->
-    <link rel="stylesheet" href="{{ asset('home/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('home/css/bootstrap.min.css') }}">
 	<!-- font-awesome -->
     <link rel="stylesheet" href="{{ asset('home/font-awesome-4.7.0/css/font-awesome.min.css') }}">
     
