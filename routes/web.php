@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +15,12 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login',[AuthController::class,'login']);
 
 Route::get('/', function() {
     return view('welcome');
 });
 
-Route::get('dash',[AuthController::class,'login']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('dashboard',[DashboardController::class,'index']);
+});

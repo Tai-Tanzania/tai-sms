@@ -30,7 +30,7 @@
                         <img src="img/tailogowhite.png" alt="logo" style="max-width: 200px">
                     </div>
                     <div class="col-6 align-self-center text-right">
-                        <a href="#" id="chat" class="text-white lead">Text Us Now</a>
+                        <a href="#" id="chat" class="text-white lead mr-2">sw</a>
                     </div>
                 </div>
             </header>
@@ -42,7 +42,7 @@
                 Lorem ipsum dolor sit amet, id nec enim autem oblique, ei dico mentitum duo.
                 <br> Illum iusto laoreet his te. Lorem partiendo mel ex. Ad vitae admodum voluptatum per.
             </p>
-            {{-- <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-green">Get Started</a> --}}
+            <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" style="background: black" class="btn my-4 text-white font-weight-bold atlas-cta">Text us now</a>
         </div>
     </div>
         <!-- three-blcok -->
@@ -54,14 +54,14 @@
                 <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center"> 
                     <h4>Messages sent</h4>
                     <p style="font-size: 50px">
-                        1000
+                        {{ count($messages) }}
                     </p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
                     
                     <h4>People reached</h4>
                     <p style="font-size: 50px">
-                        100
+                        {{ count($users) }}
                     </p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
@@ -79,8 +79,8 @@
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
                     <h2 class="font-weight-bold">Toll free</h2>
                     <p class="my-4">
-                        Get information on education, health, and updates on Tai, or just chat with us, for free!
-                        This ensures we can communicate with our followers regardless of their financial status.
+                        Get information on education, health, and updates <br> on Tai, or just chat with us, for free! 
+                        This ensures we can communicate with our stakeholders and beneficaries <br> regardless of their financial status.
                     </p>
                     {{-- <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a> --}}
                 </div>
@@ -140,7 +140,7 @@
                 <div class="col-md-12 text-white">
                     <h2 class="font-weight-bold text-center">Text Us</h2>
                     <p class="my-4 text-center">
-                        Sending us your details below will <br> allow us to start chatting with you.
+                        Sending us your details will <br> allow us to start chatting with you.
                     </p>
                     <br>
                     <form>
@@ -172,7 +172,7 @@
         <div class="container">
             <div class="row justify-content-between">
             	<div class="col-md-6 text-white align-self-center text-center text-md-left my-2">
-                    Copyright © {{ date("Y") }} , {{ env('APP_NAME') }}.
+                    Copyright © {{ date("Y") }} , Tai Tanzania.
                 </div>
                 <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
                     <a href="#" class="d-inline-block text-center ml-2">
@@ -183,6 +183,9 @@
                     </a>
                     <a href="#" class="d-inline-block text-center ml-2">
                     	<i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="d-inline-block text-center ml-2">
+                    	<i class="fa fa-youtube" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
