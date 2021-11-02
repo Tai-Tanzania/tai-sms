@@ -74,6 +74,9 @@ class SMSController extends Controller
                 'to' =>  $request->input('to'),
                 'transaction_id' => $request->input('transaction_id'),
             ]);
+
+            return \response()->json('success', 200);
+
     }
 
     public function callback(Request $request){
