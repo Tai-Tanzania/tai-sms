@@ -3,7 +3,7 @@
         <div class="container" >
 
             <div class="text-center pt-4">
-                <img src="{{ asset('tailogowhite.png') }}" style="max-width: 200px">
+                <img src="{{ asset('img/tailogowhite.png') }}" style="max-width: 200px">
                 <br><br>
                 <h2 class="text-white font-weight-bolder">
                     SMS Platform
@@ -36,7 +36,7 @@
 
         <div class="row mt-4">
             <div class="col-md-12 text-center">
-                <img src="{{ asset('tai-kids.png') }}" alt="..." style="max-width: 450px">
+                <img src="{{ asset('img/tai-kids.png') }}" alt="..." style="max-width: 450px">
             </div>
         </div>
     </div>
