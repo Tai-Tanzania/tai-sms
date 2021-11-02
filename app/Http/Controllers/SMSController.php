@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Http;
 use App\Models\Message;
+use App\Models\Beneficiary;
 
 class SMSController extends Controller
 {
@@ -57,13 +58,27 @@ class SMSController extends Controller
 
     public function callback(Request $request){
 
-            //inserts to DB
+        $checkIfUserExistsInDB = Beneficiary::where('phone', $request->input('from'))->exists();
+
+        if(!$checkIfUserExistsInDB){
+            Beneficiary::create([
+                'phone' => $request->input('from')
+            ]);
+
             Message::create([
                 'from' => $request->input('from'),
                 'sms' => $request->input('message.text'),
                 'to' =>  $request->input('to'),
                 'transaction_id' => $request->input('transaction_id'),
             ]);
+        }
+
+        Message::create([
+            'from' => $request->input('from'),
+            'sms' => $request->input('message.text'),
+            'to' =>  $request->input('to'),
+            'transaction_id' => $request->input('transaction_id'),
+        ]);
 
             return \response()->json('success', 200);
 

@@ -22,4 +22,6 @@ Route::get('/', [AuthController::class, 'index']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('dashboard',[DashboardController::class,'index']);
+
+    Route::get('logout', [AuthController::class,'logout']);
 });
