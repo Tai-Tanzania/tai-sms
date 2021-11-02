@@ -16,7 +16,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('login',[AuthController::class,'login']);
-Route::post('login', [AuthController::class,'autheticate']);
+Route::post('authenticate', [AuthController::class,'autheticate']);
 
 Route::get('/', [AuthController::class, 'index']);
 

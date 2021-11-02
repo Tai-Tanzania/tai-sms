@@ -3,7 +3,9 @@
         <div class="container" >
 
             <div class="text-center pt-4">
-                <img src="{{ asset('img/tailogowhite.png') }}" style="max-width: 200px">
+                <a href="/">
+                    <img src="{{ asset('img/tailogowhite.png') }}" style="max-width: 200px">
+                </a>
                 <br><br>
                 <h2 class="text-white font-weight-bolder">
                     SMS Platform
@@ -13,7 +15,7 @@
             <div class="d-flex row justify-content-center">    
                 <div class="card mt-3" style="width: 32rem;">
                     <div class="card-body">
-                      <form action="/login" method="POST">
+                      <form action="/authenticate" method="POST">
                           @csrf
                           <div class="form-group mb-3">
                               <label for="">Email</label>
