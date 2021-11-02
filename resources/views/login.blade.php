@@ -13,7 +13,7 @@
             <div class="d-flex row justify-content-center">    
                 <div class="card mt-3" style="width: 32rem;">
                     <div class="card-body">
-                      <form action="" method="post">
+                      <form action="login" method="post">
                           @csrf
                           <div class="form-group mb-3">
                               <label for="">Email</label>
@@ -24,7 +24,7 @@
                               <input type="password" name="password" autocomplete="off" class="form-control">
                           </div>
                           <div class="form-group mb-3">
-                              <a class="btn-primary btn" href="/dash">
+                              <a class="btn-primary btn" type="submit">
                                   Login
                               </a>
                           </div>

@@ -15,11 +15,10 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/login',[AuthController::class,'login']);
+Route::get('login',[AuthController::class,'login']);
+Route::post('login', [AuthController::class,'autheticate']);
 
-Route::get('/', function() {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'index']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('dashboard',[DashboardController::class,'index']);
