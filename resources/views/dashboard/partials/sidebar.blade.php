@@ -25,7 +25,7 @@
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="far fa-fw fa-address-card"></i>
-            <span>Cards</span></a>
+            <span>Beneficiaries</span></a>
     </li>
 
     <!-- Divider -->
