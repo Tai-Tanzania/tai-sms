@@ -10,14 +10,14 @@
     <meta name="description" content="">
     <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
     <!-- custom.css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('home/css/custom.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/home/css/custom.css') }}">
     <!-- bootstrap.min.css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('home/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/home/css/bootstrap.min.css') }}">
 	<!-- font-awesome -->
-    <link rel="stylesheet" href="{{ asset('home/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/home/font-awesome-4.7.0/css/font-awesome.min.css') }}">
     
     <!-- AOS -->
-    <link rel="stylesheet" href="{{ asset('home/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('/home/css/aos.css') }}">
 </head>
 
 <body>
@@ -190,7 +190,7 @@
     </div>
     
     <!-- AOS -->
-    <script src="{{ asset('home/js/aos.js') }}"></script>
+    <script src="{{ asset('/home/js/aos.js') }}"></script>
     <script>
       AOS.init({
       });
