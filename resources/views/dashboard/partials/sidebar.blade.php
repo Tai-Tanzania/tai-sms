@@ -3,7 +3,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-text mx-3">
-            <img src="{{ asset('img/tailogowhite.png') }}" style="max-width: 120px">
+            <a href="/">
+                <img src="{{ asset('img/tailogowhite.png') }}" style="max-width: 120px">
+            </a>
         </div>
     </a>
 

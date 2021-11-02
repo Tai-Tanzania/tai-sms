@@ -13,7 +13,7 @@
             <div class="d-flex row justify-content-center">    
                 <div class="card mt-3" style="width: 32rem;">
                     <div class="card-body">
-                      <form action="login" method="post">
+                      <form action="/login" method="post">
                           @csrf
                           <div class="form-group mb-3">
                               <label for="">Email</label>
