@@ -54,14 +54,14 @@
                 <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center"> 
                     <h4>Messages sent</h4>
                     <p style="font-size: 50px">
-                        {{ count($messages) }}
+                        {{ is_array($messages) ? count($messages) : 0 }}
                     </p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
                     
                     <h4>People reached</h4>
                     <p style="font-size: 50px">
-                        {{ count($users) }}
+                        {{ is_array($users) ? count($users) : 0 }}
                     </p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">

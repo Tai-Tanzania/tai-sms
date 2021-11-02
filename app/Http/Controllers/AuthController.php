@@ -10,8 +10,8 @@ use App\Models\Beneficiary;
 class AuthController extends Controller
 {
     public function index(){
-        $messages = Message::all();
-        $users = Beneficiary::all();
+        $messages = Message::get();
+        $users = Beneficiary::get();
 
         return view('welcome', compact('messages','users'));
     }
