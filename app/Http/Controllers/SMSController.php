@@ -162,13 +162,32 @@ class SMSController extends Controller
 
 
         switch ($message) {
-            case Str::endsWith($message, 'E'):
+            case Str::endsWith($message, 'GBV'):
                 $gbvController = new GBVController();
-                $gbvController->index(null, $phone);
+                $gbvController->index($phone);
                 break;
-            
+            case Str::startsWith($message, 'GBV A'):
+                $gbvController = new GBVController();
+                $gbvController->gbvA($phone);
+                break;
+            case Str::startsWith($message, 'GBV B'):
+                $gbvController = new GBVController();
+                $gbvController->gbvB($phone);
+                break;
+            case Str::startsWith($message, 'GBV C'):
+                $gbvController = new GBVController();
+                $gbvController->gbvC($phone);
+                break;
+            case Str::startsWith($message, 'GBV D'):
+                $gbvController = new GBVController();
+                $gbvController->gbvD($phone);
+                break;
+            case Str::startsWith($message, 'GBV E'):
+                $gbvController = new GBVController();
+                $gbvController->gbvE($phone);
+                break;
             default:
-                # code...
+                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal.");
                 break;
         }
 
@@ -207,12 +226,16 @@ class SMSController extends Controller
         }
 
         if($checkIfGreeting){
-            Message::create([
-                'from' => $request->input('from'),
-                'sms' => $request->input('message.text'),
-                'to' =>  $request->input('to'),
-                'transaction_id' => $request->input('transaction_id'),
-            ]);
+
+            $b = Beneficiary::where('phone', $phone)->first();
+
+            // Message::create([
+            //     'from' => $request->input('from'),
+            //     'sms' => $request->input('message.text'),
+            //     'to' =>  $request->input('to'),
+            //     'transaction_id' => $request->input('transaction_id'),
+            //     'beneficiary_id' => $b->id
+            // ]);
 
             //send greeting sms
             return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal.");
@@ -271,19 +294,19 @@ class SMSController extends Controller
         Beneficiary::where('phone', $phone)->update(['region' => Str::after($message, 'Naishi mkoa wa')]);
         return $this->sendSMS($phone, "Asante kwa kujibu maswali yetu. 
         Chagua Zipi kati ya vifwatavyo ungependa kujua zaidi:
-        \n\n E. Ukatili wa kijinsia na watoto 
-        \n\n F. Ndoa za utotoni 
-        \n\n G. Virus Vya Ukimwi 
-        \n\n H. Mimba za utotoni"); 
+        \n GBV . Ukatili wa kijinsia na watoto 
+        \n CM . Ndoa za utotoni 
+        \n HIV . Virus Vya Ukimwi 
+        \n TP . Mimba za utotoni"); 
     }
 
     public function saveRegionInEng($phone,$message){
         Beneficiary::where('phone', $phone)->update(['region' => Str::beforeLast($message, 'region')]);
         return $this->sendSMS($phone, "Thanks for answering our questions. Choose which ones below would you like to know more about: 
-            \n\n E. Gender based violence
-            \n\n F. Child Marriage
-            \n\n G. Human Immunodefiency Virus
-            \n\n H. Teenage Pregnancy"); 
+            \n GBV . Gender based violence
+            \n CM . Child Marriage
+            \n HIV . Human Immunodefiency Virus
+            \n TP . Teenage Pregnancy"); 
     }
 
 }
