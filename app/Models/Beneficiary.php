@@ -16,4 +16,8 @@ class Beneficiary extends Model
     public function messages(){
         return $this->hasMany(Message::class);
     }
+
+    public function lang(){
+        return $this->belongsTo(Language::class);
+    }
 }

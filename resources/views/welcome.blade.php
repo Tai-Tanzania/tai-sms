@@ -39,8 +39,8 @@
             	via messages.
             </h1>
             <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-white my-4">
-                Lorem ipsum dolor sit amet, id nec enim autem oblique, ei dico mentitum duo.
-                <br> Illum iusto laoreet his te. Lorem partiendo mel ex. Ad vitae admodum voluptatum per.
+                Get engaged with Tai Tanzania! All information on sexual <br> 
+                reproductive health is now at the grasp of your fingertips.
             </p>
             <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" style="background: black" class="btn my-4 text-white font-weight-bold atlas-cta">Text us now</a>
         </div>
@@ -175,16 +175,16 @@
                     Copyright © {{ date("Y") }} , Tai Tanzania.
                 </div>
                 <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
-                    <a href="#" class="d-inline-block text-center ml-2">
+                    <a href="https://web.facebook.com/taitanzania" target="_blank" class="d-inline-block text-center ml-2">
                     	<i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="d-inline-block text-center ml-2">
+                    <a href="https://twitter.com/taitanzania?s=21" target="_blank" class="d-inline-block text-center ml-2">
                     	<i class="fa fa-twitter" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="d-inline-block text-center ml-2">
+                    <a href="https://www.linkedin.com/company/tai-tanzania/" target="_blank" class="d-inline-block text-center ml-2">
                     	<i class="fa fa-linkedin" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="d-inline-block text-center ml-2">
+                    <a href="https://www.youtube.com/c/TaiTanzania" target="_blank" class="d-inline-block text-center ml-2">
                     	<i class="fa fa-youtube" aria-hidden="true"></i>
                     </a>
                 </div>

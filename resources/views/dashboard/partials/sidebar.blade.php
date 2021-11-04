@@ -28,6 +28,12 @@
             <span>Beneficiaries</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="far fa-fw fa-address-card"></i>
+            <span>Messages</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

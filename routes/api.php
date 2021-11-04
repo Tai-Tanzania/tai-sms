@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SMSController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('sms-callback', [SMSController::class,'callback']);
-Route::post('send-sms',[SMSController::class,'sendSMS']);
+Route::post('send-sms',[SMSController::class,'testerSMS']);
 Route::get('messages',[SMSController::class,'getAllSMS']);
+Route::get('getAllBeneficiaries',[AuthController::class,'getAllBeneficiaries']);

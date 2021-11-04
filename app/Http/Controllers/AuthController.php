@@ -20,6 +20,11 @@ class AuthController extends Controller
         return view('login');
     }
 
+    public function getAllBeneficiaries(){
+        $users = Beneficiary::get();
+        return \response()->json($users, 200);
+    }
+
     public function autheticate(Request $request){
         $credentials = $request->validate([
             'email' => ['required', 'email'],
