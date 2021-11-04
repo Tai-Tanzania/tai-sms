@@ -9,6 +9,9 @@ use App\Models\Message;
 use App\Models\Beneficiary;
 use Illuminate\Support\Str;
 use App\Http\Controllers\GBVController;
+use App\Http\Controllers\HIVController;
+use App\Http\Controllers\MarriageController;
+use App\Http\Controllers\PregnancyController;
 
 class SMSController extends Controller
 {    
@@ -185,6 +188,58 @@ class SMSController extends Controller
             case Str::startsWith($message, 'GBV E'):
                 $gbvController = new GBVController();
                 $gbvController->gbvE($phone);
+                break;
+            case Str::startsWith($message, 'HIV A'):
+                $hivController = new HIVController();
+                $hivController->hivA($phone);
+                break;
+            case Str::startsWith($message, 'HIV B'):
+                $hivController = new HIVController();
+                $hivController->hivB($phone);
+                break;
+            case Str::startsWith($message, 'HIV C'):
+                $hivController = new HIVController();
+                $hivController->hivC($phone);
+                break;
+            case Str::startsWith($message, 'HIV D'):
+                $hivController = new HIVController();
+                $hivController->hivD($phone);
+                break;
+            case Str::startsWith($message, 'HIV E'):
+                $hivController = new HIVController();
+                $hivController->hivE($phone);
+                break;
+            case Str::startsWith($message, 'HIV F'):
+                $hivController = new HIVController();
+                $hivController->hivF($phone);
+                break;
+            case Str::startsWith($message, 'HIV G'):
+                $hivController = new HIVController();
+                $hivController->hivG($phone);
+                break;
+            case Str::startsWith($message, 'CM A'):
+                $cmController = new MarriageController();
+                $cmController->cmA($phone);
+                break;
+            case Str::startsWith($message, 'CM B'):
+                $cmController = new MarriageController();
+                $cmController->cmB($phone);
+                break;
+            case Str::startsWith($message, 'TP A'):
+                $pcController = new PregnancyController();
+                $pcController->pcA($phone);
+                break;
+            case Str::startsWith($message, 'TP B'):
+                $pcController = new PregnancyController();
+                $pcController->pcB($phone);
+                break;
+            case Str::startsWith($message, 'TP C'):
+                $pcController = new PregnancyController();
+                $pcController->pcC($phone);
+                break;
+            case Str::startsWith($message, 'TP D'):
+                $pcController = new PregnancyController();
+                $pcController->pcD($phone);
                 break;
             default:
                 return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal.");

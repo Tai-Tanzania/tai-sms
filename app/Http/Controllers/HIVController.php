@@ -101,7 +101,46 @@ class HIVController extends Controller
     }
 
     public function hivD($phone){
+        $smsController = new SMSController();
+        $user = Beneficiary::where('phone', $phone)->first();
 
+        if($user->language_id == 1){
+            return $smsController->sendSMS($phone,
+            "• Having unprotected sex,
+            \n • Having multiple partners,
+            \n • Uses of drugs and alcohol,
+            \n • Incorrect and inconsistence use of protection,
+            \n • Sharing sharp tools eg needles, razor blades etc.");
+        }
+
+        return $smsController->sendSMS($phone,
+            "• Kushiriki ngono isiyo salama.
+            \n • Kuwa na mwenza zaid ya mmoja.
+            \n • Matumizi ya vilevi.
+            \n • Matumizi yasiyo sahihi ya kondom.
+            \n • Kuchangia vitu vyenye ncha kali. Mfano; sindano");
+    }
+
+    public function hivE($phone){
+        $smsController = new SMSController();
+        $user = Beneficiary::where('phone', $phone)->first();
+
+        if($user->language_id == 1){
+            return $smsController->sendSMS($phone,
+            "• Swollen lymph nodes.
+            \n • Intermittent fever and chills,
+           \n • Rash,
+           \n • Night sweats,
+           \n • Intermittent muscle aches and fatigue
+           \n • Sore throat");
+        }
+
+        // return $smsController->sendSMS($phone,
+        //     "• Kushiriki ngono isiyo salama.
+        //     \n • Kuwa na mwenza zaid ya mmoja.
+        //     \n • Matumizi ya vilevi.
+        //     \n • Matumizi yasiyo sahihi ya kondom.
+        //     \n • Kuchangia vitu vyenye ncha kali. Mfano; sindano");
     }
 
 }
