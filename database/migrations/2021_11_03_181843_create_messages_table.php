@@ -17,7 +17,6 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->string('from');
             $table->string('sms');
-            $table->string('to');
             $table->string('transaction_id');
             $table->unsignedBigInteger('beneficiary_id');
             $table->foreign('beneficiary_id')->references('id')->on('beneficiaries');

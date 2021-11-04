@@ -133,7 +133,7 @@ class SMSController extends Controller
         if(!$checkIfUserExistsInDB){
 
             //create new user
-            Beneficiary::create([
+            $b = Beneficiary::create([
                 'phone' => $phone
             ]);
 
@@ -141,8 +141,8 @@ class SMSController extends Controller
             Message::create([
                 'from' => $phone,
                 'sms' => $message,
-                'to' =>  $request->input('to'),
                 'transaction_id' => $request->input('transaction_id'),
+                'beneficiary_id' => $b->id
             ]);
 
             //send greeting SMS
