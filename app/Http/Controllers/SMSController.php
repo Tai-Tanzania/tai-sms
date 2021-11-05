@@ -149,7 +149,7 @@ class SMSController extends Controller
             ]);
 
             //send greeting SMS
-            return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
+            return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type English to communicate in English or Swahili to communicate in Swahili.");
         }
 
         $checkIfGreeting = Str::startsWith($message , ['Hello', 'Habari']);
@@ -245,7 +245,7 @@ class SMSController extends Controller
                 $pcController->pcD($phone);
                 break;
             default:
-                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal.");
+                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal.Type English to communicate in English or Swahili to communicate in Swahili.");
                 break;
         }
 
