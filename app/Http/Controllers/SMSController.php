@@ -156,15 +156,15 @@ class SMSController extends Controller
 
 
 
-        $checkIfEnglishIsSelected = Str::startsWith($message, 'English');
-        $checkIfSwahiliIsSelected = Str::startsWith($message, 'Swahili');
+        $checkIfEnglishIsSelected = Str::contains($message, 'English');
+        $checkIfSwahiliIsSelected = Str::contains($message, 'Swahili');
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
         $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]);
         $checkIfGreetingInswahili = Str::containsAll($message, ['Jina','langu', 'ni']);
-        $checkIfMale = Str::startsWith($message, 'C');
-        $checkIfFemale = Str::startsWith($message, 'D');
-        $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
-        $checkRegionInEnglish = Str::startsWith($message, 'region');
+        $checkIfMale = Str::contains($message, 'C');
+        $checkIfFemale = Str::contains($message, 'D');
+        $checkRegionInSwahili = Str::contains($message, 'Naishi');
+        $checkRegionInEnglish = Str::contains($message, 'region');
 
 
         switch ($message) {
