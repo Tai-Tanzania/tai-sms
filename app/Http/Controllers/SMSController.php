@@ -152,16 +152,19 @@ class SMSController extends Controller
             return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
         }
 
-        $checkIfGreeting = Str::startsWith($message , ['Hello', 'Hi', 'Niaje', 'Mambo']);
-        $checkIfEnglishIsSelected = Str::endsWith($message, 'A');
-        $checkIfSwahiliIsSelected = Str::endsWith($message, 'B');
+        $checkIfGreeting = Str::startsWith($message , ['Hello', 'Habari']);
+
+
+
+        $checkIfEnglishIsSelected = Str::startsWith($message, 'A');
+        $checkIfSwahiliIsSelected = Str::startsWith($message, 'B');
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
         $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]);
         $checkIfGreetingInswahili = Str::containsAll($message, ['Jina','langu', 'ni']);
-        $checkIfMale = Str::endsWith($message, 'C');
-        $checkIfFemale = Str::endsWith($message, 'D');
+        $checkIfMale = Str::startsWith($message, 'C');
+        $checkIfFemale = Str::startsWith($message, 'D');
         $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
-        $checkRegionInEnglish = Str::endsWith($message, 'region');
+        $checkRegionInEnglish = Str::startsWith($message, 'region');
 
 
         switch ($message) {
