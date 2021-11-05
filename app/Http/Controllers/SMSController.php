@@ -156,6 +156,12 @@ class SMSController extends Controller
 
 
         $checkIfEnglishIsSelected = Str::startsWith($message, ['English']);
+
+        if($checkIfEnglishIsSelected){
+            Beneficiary::where('phone', $phone)->update(['language' => 1]);
+            return $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
+        }
+
         $checkIfSwahiliIsSelected = Str::startsWith($message, ['Swahili']);
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
         $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]);
@@ -189,10 +195,7 @@ class SMSController extends Controller
             $this->saveGender($phone, $message);
         }
 
-        if($checkIfEnglishIsSelected){
-            Beneficiary::where('phone', $phone)->update(['language' => 1]);
-            return $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
-        }
+        
 
         if($checkIfSwahiliIsSelected){
             Beneficiary::where('phone', $phone)->update(['language' => 2]);
