@@ -164,6 +164,40 @@ class SMSController extends Controller
         $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
         $checkRegionInEnglish = Str::startsWith($message, 'region');
 
+        if($checkIfGreetingInswahili){
+            $this->saveNameInSwahili($phone, $message);
+        }
+
+        if($checkRegionInSwahili){
+            $this->saveRegionInSwahili($phone,$message);
+        }
+
+        if($checkRegionInEnglish){
+            $this->saveRegionInEng($phone,$message);
+        }
+
+        if($checkAgeInSwahili){
+            $this->saveAgeInSwahili($phone, $message);
+        }
+
+        if($checkAgeInEnglish){
+            $this->saveAgeInEnglish($phone, $message);
+        }
+
+        if($checkIfMale || $checkIfFemale){
+            $this->saveGender($phone, $message);
+        }
+
+        if($checkIfEnglishIsSelected){
+            Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
+            return $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
+        }
+
+        if($checkIfSwahiliIsSelected){
+            Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
+            return $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
+        }
+
 
         switch ($message) {
             case Str::endsWith($message, 'GBV'):
@@ -243,42 +277,8 @@ class SMSController extends Controller
                 $pcController->pcD($phone);
                 break;
             default:
-                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal.");
+                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Type English to communicate in English or B to communicate in Swahili.");
                 break;
-        }
-
-        if($checkIfGreetingInswahili){
-            $this->saveNameInSwahili($phone, $message);
-        }
-
-        if($checkRegionInSwahili){
-            $this->saveRegionInSwahili($phone,$message);
-        }
-
-        if($checkRegionInEnglish){
-            $this->saveRegionInEng($phone,$message);
-        }
-
-        if($checkAgeInSwahili){
-            $this->saveAgeInSwahili($phone, $message);
-        }
-
-        if($checkAgeInEnglish){
-            $this->saveAgeInEnglish($phone, $message);
-        }
-
-        if($checkIfMale || $checkIfFemale){
-            $this->saveGender($phone, $message);
-        }
-
-        if($checkIfEnglishIsSelected){
-            Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
-            return $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
-        }
-
-        if($checkIfSwahiliIsSelected){
-            Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
-            return $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
         }
 
         if($checkIfGreeting){
