@@ -149,13 +149,14 @@ class SMSController extends Controller
             ]);
 
             //send greeting SMS
-            return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type English to communicate in English or B to communicate in Swahili.");
+            $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type English to communicate in English or B to communicate in Swahili.");
+            return response()->json('Registration confirmed', 200);
         }
 
         $checkIfGreeting = Str::startsWith($message , ['Hello', 'Habari']);
 
-        $checkIfEnglishIsSelected = Str::startsWith($message, 'English');
-        $checkIfSwahiliIsSelected = Str::startsWith($message, 'Swahili');
+        $checkIfEnglishIsSelected = Str::contains($message, 'English');
+        $checkIfSwahiliIsSelected = Str::contains($message, 'Swahili');
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
         $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]);
         $checkIfGreetingInswahili = Str::containsAll($message, ['Jina','langu', 'ni']);
@@ -190,12 +191,14 @@ class SMSController extends Controller
 
         if($checkIfEnglishIsSelected){
             Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
-            return $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
+            $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
+            return response()->json(Beneficiary::where('phone', $phone)->first(), 200);
         }
 
         if($checkIfSwahiliIsSelected){
             Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
-            return $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
+            $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
+            return response()->json(Beneficiary::where('phone', $phone)->first(), 200);
         }
 
 
