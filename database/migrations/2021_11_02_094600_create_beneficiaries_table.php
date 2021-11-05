@@ -20,7 +20,7 @@ class CreateBeneficiariesTable extends Migration
             $table->string('gender')->nullable();
             $table->string('location')->nullable();
             $table->string('age')->nullable();
-            $table->unsignedBigInteger('language_id')->nullable();
+            $table->string('language');
             $table->foreign('language_id')->references('id')->on('languages');
             $table->timestamps();
         });

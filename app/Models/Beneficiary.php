@@ -10,7 +10,7 @@ class Beneficiary extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'phone', 'gender', 'location'
+        'name', 'phone', 'gender', 'location', 'language_id'
     ];
 
     public function messages(){
