@@ -18,6 +18,6 @@ class Beneficiary extends Model
     }
 
     public function lang(){
-        return $this->belongsTo(Language::class);
+        return $this->belongsTo(Language::class, 'language_id');
     }
 }
