@@ -191,12 +191,12 @@ class SMSController extends Controller
 
         if($checkIfEnglishIsSelected){
             Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
-            $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
+            return $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
         }
 
         if($checkIfSwahiliIsSelected){
             Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
-            $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
+            return $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
         }
 
 
