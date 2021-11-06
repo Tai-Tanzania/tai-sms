@@ -38,24 +38,24 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "• Lack of information about sexual and reproductive health may lead to unprotected sex,
-             \n • Family and community pressure that lead to early marriage,
-             \n • School dropout,
-             \n • Sexual violence or child rape,
-             \n • Poverty,
-             \n • Exposure to risk environment,
-             \n • Peer pressure, and
-             \n • Bad taboos practices");
+             "- Lack of information about sexual and reproductive health may lead to unprotected sex,
+             \n - Family and community pressure that lead to early marriage,
+             \n - School dropout,
+             \n - Sexual violence or child rape,
+             \n - Poverty,
+             \n - Exposure to risk environment,
+             \n - Peer pressure, and
+             \n - Bad taboos practices");
         }
 
         return $smsController->sendSMS($phone, 
-        "• Kutoona siku zako za hedhi au kupata hedhi yam matone matone,
-        \n • Matiti kuongezeka ukubwa na wakati mwingine yanauma,
-        \n • Kichefuchefu au kutapika na mara nyingi asubuhi,
-        \n • Kuhisi kizunguzungu na/au kuzimia,
-        \n • Mwili kuongezeka uzito, 
-        \n • Kuhisi uchovu, na
-        \n • Tumbo kuongezeka na kuwa kubwa.");  
+        "- Kutoona siku zako za hedhi au kupata hedhi yam matone matone,
+        \n - Matiti kuongezeka ukubwa na wakati mwingine yanauma,
+        \n - Kichefuchefu au kutapika na mara nyingi asubuhi,
+        \n - Kuhisi kizunguzungu na/au kuzimia,
+        \n - Mwili kuongezeka uzito, 
+        \n - Kuhisi uchovu, na
+        \n - Tumbo kuongezeka na kuwa kubwa.");  
     }
 
 
@@ -65,23 +65,23 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "• Missed or very light menstrual period,
-             \n • Breast tenderness,
-             \n • Nausea or vomiting, often in the morning,
-             \n • Feeling dizzy and fainting,
-             \n • Weight gain,
-             \n • Feeling tired, and
-             \n • Swollen abdomen belly");
+             "- Missed or very light menstrual period,
+             \n - Breast tenderness,
+             \n - Nausea or vomiting, often in the morning,
+             \n - Feeling dizzy and fainting,
+             \n - Weight gain,
+             \n - Feeling tired, and
+             \n - Swollen abdomen belly");
         }
 
         return $smsController->sendSMS($phone, 
-        "• Kutoona siku zako za hedhi au kupata hedhi yam matone matone,
-       \n • Matiti kuongezeka ukubwa na wakati mwingine yanauma,
-       \n • Kichefuchefu au kutapika na mara nyingi asubuhi,
-       \n • Kuhisi kizunguzungu na/au kuzimia,
-       \n • Mwili kuongezeka uzito, 
-       \n • Kuhisi uchovu, na
-       \n • Tumbo kuongezeka na kuwa kubwa.");  
+        "- Kutoona siku zako za hedhi au kupata hedhi yam matone matone,
+       \n - Matiti kuongezeka ukubwa na wakati mwingine yanauma,
+       \n - Kichefuchefu au kutapika na mara nyingi asubuhi,
+       \n - Kuhisi kizunguzungu na/au kuzimia,
+       \n - Mwili kuongezeka uzito, 
+       \n - Kuhisi uchovu, na
+       \n - Tumbo kuongezeka na kuwa kubwa.");  
     }
 
 
@@ -91,23 +91,23 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "• High risk of Infant and maternal mortality
-             \n • High chances of premature infants
-             \n • High chances of getting eclampsia which might lead to death.
-             \n • High chances of getting fistula.
-             \n • Getting genital problems, such as heavy bleeding and severe rupture during childbirth. 
-             \n • Severe chronic pain or infertility due to immature reproductive organs.
-             \n • School dropout.");
+             "- High risk of Infant and maternal mortality
+             \n - High chances of premature infants
+             \n - High chances of getting eclampsia which might lead to death.
+             \n - High chances of getting fistula.
+             \n - Getting genital problems, such as heavy bleeding and severe rupture during childbirth. 
+             \n - Severe chronic pain or infertility due to immature reproductive organs.
+             \n - School dropout.");
         }
 
         return $smsController->sendSMS($phone, 
-        "• Uwezekano mkubwa wa kupata tatizo la fistula,
-         \n • Unahatarisha uhai wako pamoja na wa mtoto,
-         \n • Kuna uwezekano mkubwa wa mtoto kuzaliwa njiti,
-         \n • Kupata kifafa cha mimba ambacho huweza kusababisha kifo cha mama na/au mtoto,
-         \n • Kupata matatizo ya viungo vya uzazi, kama vile kutokwa damu nyingi na kuchanika sana wakati wa kujifungua,
-         \n • Kupata uchungu wa muda mrefu au kushindwa kujifungua kutokana na viungo vya uzazi/ nyonga kutokukomaa,
-         \n • Uwezekano mkubwa wa kukatiza masomo.");  
+        "- Uwezekano mkubwa wa kupata tatizo la fistula,
+         \n - Unahatarisha uhai wako pamoja na wa mtoto,
+         \n - Kuna uwezekano mkubwa wa mtoto kuzaliwa njiti,
+         \n - Kupata kifafa cha mimba ambacho huweza kusababisha kifo cha mama na/au mtoto,
+         \n - Kupata matatizo ya viungo vya uzazi, kama vile kutokwa damu nyingi na kuchanika sana wakati wa kujifungua,
+         \n - Kupata uchungu wa muda mrefu au kushindwa kujifungua kutokana na viungo vya uzazi/ nyonga kutokukomaa,
+         \n - Uwezekano mkubwa wa kukatiza masomo.");  
     }
 
 
@@ -117,25 +117,25 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "• Seek right information on sexual reproductive health in health centers. 
-             \n • Open up to a trusted person such as parent, health care provider etc. 
-             \n • Avoid being tempted with luxurious goods such as money, transport lifts, mobile phones etc.
-             \n • Avoid the use of alcohol and illicit drugs. 
-             \n • Keep good company and avoid peer pressure. 
-             \n • Seek help when being raped or forced to get married at young age. 
-             \n • Avoid unprotected sex. 
+             "- Seek right information on sexual reproductive health in health centers. 
+             \n - Open up to a trusted person such as parent, health care provider etc. 
+             \n - Avoid being tempted with luxurious goods such as money, transport lifts, mobile phones etc.
+             \n - Avoid the use of alcohol and illicit drugs. 
+             \n - Keep good company and avoid peer pressure. 
+             \n - Seek help when being raped or forced to get married at young age. 
+             \n - Avoid unprotected sex. 
              ");
         }
 
         return $smsController->sendSMS($phone, 
-        "• Epuka mazingira hatarishi mfano, ngoma za usiku na masoko ya usiku,
-        \n • Tafuta taarifa sahihi kuhusu afya ya uzazi kutoka kwenye kituo cha afya,
-        \n • Kuwa huru kuongea na mtu unaemuamini,
-        \n • Epuka vishawishi vinavyweza kupelekea kupata mimba,
-        \n • Epuka matumizi ya vilevi yanayochochea kufanya ngono zembe,
-        \n • Kuwa na marafiki wazuri,
-        \n • Toa taarifa kwenye dawati lainsia au kituo chapolisi  endapo utapata tishio la kubakwa, utabakwa au kulazimishwa kuolewa, na
-        \n • Epuka ngono zembe.");  
+        "- Epuka mazingira hatarishi mfano, ngoma za usiku na masoko ya usiku,
+        \n - Tafuta taarifa sahihi kuhusu afya ya uzazi kutoka kwenye kituo cha afya,
+        \n - Kuwa huru kuongea na mtu unaemuamini,
+        \n - Epuka vishawishi vinavyweza kupelekea kupata mimba,
+        \n - Epuka matumizi ya vilevi yanayochochea kufanya ngono zembe,
+        \n - Kuwa na marafiki wazuri,
+        \n - Toa taarifa kwenye dawati lainsia au kituo chapolisi  endapo utapata tishio la kubakwa, utabakwa au kulazimishwa kuolewa, na
+        \n - Epuka ngono zembe.");  
     }
 
 

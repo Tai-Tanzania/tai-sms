@@ -33,19 +33,19 @@ class MarriageController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "• Exposure to domestic and sexual violence from a husband.
-            \n • Teenage/early pregnancy that might increase the chance for negative health impacts such as maternal and infant death.
-            \n • School dropout which will result to lack of education
-            \n • Economic dependent,
-            \n • Loss of freedom and autonomous decision for the future.");
+             "- Exposure to domestic and sexual violence from a husband.
+            \n - Teenage/early pregnancy that might increase the chance for negative health impacts such as maternal and infant death.
+            \n - School dropout which will result to lack of education
+            \n - Economic dependent,
+            \n - Loss of freedom and autonomous decision for the future.");
         }
 
         return $smsController->sendSMS($phone, 
-        "• Ukatili wa kijinsia na kingono kutoka kwa mume au mke,
-        \n • Mimba za utotoni zinazoweza kusababisha kifo,
-        \n • Kukatisha masomo,
-        \n • Kuwa tegemezi kiuchumi, na
-        \n • Kukosa uhuru na kukosa fursa ya kufanya maamuzi.");  
+        "- Ukatili wa kijinsia na kingono kutoka kwa mume au mke,
+        \n - Mimba za utotoni zinazoweza kusababisha kifo,
+        \n - Kukatisha masomo,
+        \n - Kuwa tegemezi kiuchumi, na
+        \n - Kukosa uhuru na kukosa fursa ya kufanya maamuzi.");  
     }
 
     public function cmB($phone){
@@ -54,14 +54,14 @@ class MarriageController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "• Focus should be on education and your wellbeing and not marriage.
-             \n • As soon as you encounter or see any adolescent girl being forced to marriage report to relevant authorities such as gender desk, social welfare officer and others.
-             \n • Speak out against child marriage to your family and the community.");
+             "- Focus should be on education and your wellbeing and not marriage.
+             \n - As soon as you encounter or see any adolescent girl being forced to marriage report to relevant authorities such as gender desk, social welfare officer and others.
+             \n - Speak out against child marriage to your family and the community.");
         }
 
         return $smsController->sendSMS($phone, 
-        "• Zingatia zaidi elimu (masomo) na afya yako.
-        \n • Toa taaria kwenye dawati la insia kwenye kituo chochoe cha polisi, afisa ustawi wa jamii, mwalimu au mtu unaemuamini endapo utalazimishwa kuolewa.
-        \n • Paza sauti kwa familia yako na jamii kukataa ndoa za utotoni");  
+        "- Zingatia zaidi elimu (masomo) na afya yako.
+        \n - Toa taaria kwenye dawati la insia kwenye kituo chochoe cha polisi, afisa ustawi wa jamii, mwalimu au mtu unaemuamini endapo utalazimishwa kuolewa.
+        \n - Paza sauti kwa familia yako na jamii kukataa ndoa za utotoni");  
     }
 }
