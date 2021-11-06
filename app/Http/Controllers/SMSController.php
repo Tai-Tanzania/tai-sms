@@ -278,7 +278,7 @@ class SMSController extends Controller
                 $pcController->pcD($phone);
                 break;
             default:
-                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Type English to communicate in English or B to communicate in Swahili.");
+                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
                 break;
         }
 
