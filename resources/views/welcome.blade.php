@@ -143,15 +143,13 @@
                         Sending us your details will <br> allow us to start chatting with you.
                     </p>
                     <br>
-                    <form>
+                    <form action="/sendMsg" method="POST">
+                        @csrf
                     	<div class="row">
-	                        <div class="form-group col-md-6">
-	                            <label for="name">Your Name</label>
-	                            <input type="name" class="form-control" id="name">
-	                        </div>
-	                        <div class="form-group col-md-6">
+	                        
+	                        <div class="form-group col-md-12">
 	                            <label for="Email">Your Phone number</label>
-	                            <input type="text" class="form-control" id="phone">
+	                            <input type="text" name="phone" class="form-control" id="phone">
 	                        </div>
 	                    </div>
 	                    {{-- <div class="form-group">

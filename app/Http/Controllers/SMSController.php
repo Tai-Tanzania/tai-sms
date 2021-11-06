@@ -12,6 +12,7 @@ use App\Http\Controllers\GBVController;
 use App\Http\Controllers\HIVController;
 use App\Http\Controllers\MarriageController;
 use App\Http\Controllers\PregnancyController;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SMSController extends Controller
 {    
@@ -117,6 +118,37 @@ class SMSController extends Controller
     public function getAllSMS(){
         $messages = Message::all();
         return \response()->json($messages, 200);
+    }
+
+    public function formMsg(Request $request){
+
+        $checkIfUserExistsInDB = Beneficiary::where('phone', $phone)->exists();
+
+        if(!$checkIfUserExistsInDB){
+
+            //create new user
+            $b = Beneficiary::create([
+                'phone' => $request->phone
+            ]);
+
+            //store message
+            Message::create([
+                'from' => $phone,
+                'sms' => $message,
+                'transaction_id' => $request->input('transaction_id'),
+                'beneficiary_id' => $b->id
+            ]);
+
+            //send greeting SMS
+            $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
+
+            toast('Your message has been sent!','success');
+            return redirect()->back();
+        }
+
+        $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
+        toast('Your message has been sent!','success');
+        return redirect()->back();
     }
     
     /**
