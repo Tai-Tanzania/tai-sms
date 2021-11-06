@@ -152,6 +152,9 @@ class SMSController extends Controller
      * @return void
      */
     public function callback(Request $request){
+        $phone = $request->input('from');
+        $message = $request->input('message.text');
+        
         $b = Beneficiary::firstOrCreate([
             'phone' => $phone
         ]);
@@ -165,8 +168,7 @@ class SMSController extends Controller
 
         return response()->json('who are you?', 200);
 
-        $phone = $request->input('from');
-        $message = $request->input('message.text');
+        
 
         //checking if user is in the database
         $checkIfUserExistsInDB = Beneficiary::where('phone', $phone)->exists();
