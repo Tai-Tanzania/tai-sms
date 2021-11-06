@@ -123,12 +123,9 @@ class SMSController extends Controller
 
     public function formMsg(Request $request){
 
-        $this->sendSMS($request->phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
-        return redirect()->back();
+        $check = Beneficiary::where('phone', $request->phone)->exists();
 
-        $checkIfUserExistsInDB = Beneficiary::where('phone', $request->phone)->exists();
-
-        if(!$checkIfUserExistsInDB){
+        if(!$check){
 
             //create new user
             $b = Beneficiary::create([
@@ -137,13 +134,10 @@ class SMSController extends Controller
 
             //send greeting SMS
             $this->sendSMS($request->phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
-
-            alert()->success('Lorem Lorem Lorem');
             return redirect()->back();
         }
 
         $this->sendSMS($request->$phone, "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
-        alert()->success('Lorem Lorem Lorem');
         return redirect()->back();
     }
     
