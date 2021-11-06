@@ -155,8 +155,8 @@ class SMSController extends Controller
 
         $checkIfGreeting = Str::startsWith($message , ['Hello', 'Habari']);
 
-        $checkIfEnglishIsSelected = Str::contains($message, 'A');
-        $checkIfSwahiliIsSelected = Str::contains($message, 'B');
+        $checkIfEnglishIsSelected = Str::startsWith($message, 'A');
+        $checkIfSwahiliIsSelected = Str::startsWith($message, 'B');
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
         $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]);
         $checkIfGreetingInswahili = Str::containsAll($message, ['Jina','langu', 'ni']);
@@ -190,21 +190,13 @@ class SMSController extends Controller
         }
 
         if($checkIfEnglishIsSelected){
-            $b = Beneficiary::where('phone', $phone)->first();
-            $b->language_id = 1;
-            $b->save();
-
+            Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
             $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
-            return response()->json(Beneficiary::where('phone', $phone)->first(), 200);
         }
 
         if($checkIfSwahiliIsSelected){
-            $b = Beneficiary::where('phone', $phone)->first();
-            $b->language_id = 2;
-            $b->save();
-
+            Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
             $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
-            return response()->json(Beneficiary::where('phone', $phone)->first(), 200);
         }
 
 
@@ -286,7 +278,7 @@ class SMSController extends Controller
                 $pcController->pcD($phone);
                 break;
             default:
-                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
+                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Type English to communicate in English or B to communicate in Swahili.");
                 break;
         }
 
