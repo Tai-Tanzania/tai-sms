@@ -122,7 +122,7 @@ class SMSController extends Controller
 
     public function formMsg(Request $request){
 
-        $checkIfUserExistsInDB = Beneficiary::where('phone', $phone)->exists();
+        $checkIfUserExistsInDB = Beneficiary::where('phone', $request->phone)->exists();
 
         if(!$checkIfUserExistsInDB){
 
