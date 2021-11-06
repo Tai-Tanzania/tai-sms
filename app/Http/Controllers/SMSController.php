@@ -153,20 +153,35 @@ class SMSController extends Controller
             return response()->json('Registration confirmed', 200);
         }
 
+        //greeting check
         $checkIfGreeting = Str::startsWith($message , ['Hello', 'Habari']);
 
+        //language check
         $checkIfEnglishIsSelected = Str::startsWith($message, 'A');
         $checkIfSwahiliIsSelected = Str::startsWith($message, 'B');
+
+        //age check
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
         $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]);
+
+        //language check
         $checkIfGreetingInswahili = Str::containsAll($message, ['Jina','langu', 'ni']);
+        $checkIfGreetingInEnglish = Str::containsAll($message, ['My', 'name', 'is']);
+
+        //gender check
         $checkIfMale = Str::startsWith($message, 'C');
         $checkIfFemale = Str::startsWith($message, 'D');
+
+        //region check
         $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
         $checkRegionInEnglish = Str::startsWith($message, 'region');
 
         if($checkIfGreetingInswahili){
             $this->saveNameInSwahili($phone, $message);
+        }
+
+        if($checkIfGreetingInEnglish){
+            $this->saveNameInEnglish($phone, $message);
         }
 
         if($checkRegionInSwahili){
