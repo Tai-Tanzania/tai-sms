@@ -152,6 +152,16 @@ class SMSController extends Controller
      * @return void
      */
     public function callback(Request $request){
+        $b = Beneficiary::firstOrCreate([
+            'phone' => $phone
+        ]);
+
+        Message::create([
+            'from' => $phone,
+            'sms' => $message,
+            'transaction_id' => $request->input('transaction_id'),
+            'beneficiary_id' => $b->id
+        ]);
 
         return response()->json('who are you?', 200);
 
