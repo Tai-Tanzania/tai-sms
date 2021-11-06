@@ -12,7 +12,7 @@ use App\Http\Controllers\GBVController;
 use App\Http\Controllers\HIVController;
 use App\Http\Controllers\MarriageController;
 use App\Http\Controllers\PregnancyController;
-use RealRashid\SweetAlert\Facades\Alert;
+Use Alert;
 
 class SMSController extends Controller
 {    
@@ -122,9 +122,9 @@ class SMSController extends Controller
 
     public function formMsg(Request $request){
 
-        alert()->success('Title','Lorem Lorem Lorem');
-            return redirect()->back();
-            
+        alert()->success('Lorem Lorem Lorem');
+        return redirect()->back();
+
         $checkIfUserExistsInDB = Beneficiary::where('phone', $request->phone)->exists();
 
         if(!$checkIfUserExistsInDB){
@@ -137,12 +137,12 @@ class SMSController extends Controller
             //send greeting SMS
             $this->sendSMS($request->phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
 
-            alert()->success('Title','Lorem Lorem Lorem');
+            alert()->success('Lorem Lorem Lorem');
             return redirect()->back();
         }
 
         $this->sendSMS($request->$phone, "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
-        alert()->success('Title','Lorem Lorem Lorem');
+        alert()->success('Lorem Lorem Lorem');
         return redirect()->back();
     }
     
