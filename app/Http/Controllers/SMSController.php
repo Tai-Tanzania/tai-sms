@@ -177,31 +177,31 @@ class SMSController extends Controller
         $checkRegionInEnglish = Str::startsWith($message, 'region');
 
         if($checkIfGreetingInswahili){
-            $this->saveNameInSwahili($phone, $message);
+           return $this->saveNameInSwahili($phone, $message);
         }
 
         if($checkIfGreetingInEnglish){
-            $this->saveNameInEnglish($phone, $message);
+            return $this->saveNameInEnglish($phone, $message);
         }
 
         if($checkRegionInSwahili){
-            $this->saveRegionInSwahili($phone,$message);
+            return $this->saveRegionInSwahili($phone,$message);
         }
 
         if($checkRegionInEnglish){
-            $this->saveRegionInEng($phone,$message);
+            return $this->saveRegionInEng($phone,$message);
         }
 
         if($checkAgeInSwahili){
-            $this->saveAgeInSwahili($phone, $message);
+            return  $this->saveAgeInSwahili($phone, $message);
         }
 
         if($checkAgeInEnglish){
-            $this->saveAgeInEnglish($phone, $message);
+            return $this->saveAgeInEnglish($phone, $message);
         }
 
         if($checkIfMale || $checkIfFemale){
-            $this->saveGender($phone, $message);
+            return $this->saveGender($phone, $message);
         }
 
         if($checkIfEnglishIsSelected){
@@ -325,12 +325,12 @@ class SMSController extends Controller
      * @return void
      */
     public function saveNameInSwahili($phone, $message){
-        Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'Jina langu ni ')]);
+        Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'Jina langu ni')]);
         return $this->sendSMS($phone, "Una umri wa miaka mingapi? Jibu kuanzia \"Nina umri wa miaka ...\" ukimalizia na idadi ya miaka yako.");
     }
 
     public function saveNameInEnglish($phone, $message){
-        Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'My name is ')]);
+        Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'My name is')]);
         return $this->sendSMS($phone, "How old are you? Your answer should be like \"I am 20 years old\".");
     }
     
