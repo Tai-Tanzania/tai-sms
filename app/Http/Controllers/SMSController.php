@@ -131,14 +131,6 @@ class SMSController extends Controller
                 'phone' => $request->phone
             ]);
 
-            //store message
-            Message::create([
-                'from' => $phone,
-                'sms' => $message,
-                'transaction_id' => $request->input('transaction_id'),
-                'beneficiary_id' => $b->id
-            ]);
-
             //send greeting SMS
             $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
 
