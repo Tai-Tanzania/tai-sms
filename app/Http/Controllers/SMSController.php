@@ -169,8 +169,8 @@ class SMSController extends Controller
         $checkIfGreetingInEnglish = Str::containsAll($message, ['My', 'name', 'is']);
 
         //gender check
-        $checkIfMale = Str::startsWith($message, 'C');
-        $checkIfFemale = Str::startsWith($message, 'D');
+        $checkIfMale = Str::endsWith($message, 'C');
+        $checkIfFemale = Str::endsWith($message, 'D');
 
         //region check
         $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
@@ -240,6 +240,10 @@ class SMSController extends Controller
                 $gbvController = new GBVController();
                 $gbvController->gbvE($phone);
                 break;
+            case Str::startsWith($message, 'HIV'):
+                $hivController = new HIVController();
+                $hivController->index($phone);
+                break;
             case Str::startsWith($message, 'HIV A'):
                 $hivController = new HIVController();
                 $hivController->hivA($phone);
@@ -268,6 +272,10 @@ class SMSController extends Controller
                 $hivController = new HIVController();
                 $hivController->hivG($phone);
                 break;
+            case Str::startsWith($message, 'CM'):
+                $cmController = new MarriageController();
+                $cmController->index($phone);
+                break;
             case Str::startsWith($message, 'CM A'):
                 $cmController = new MarriageController();
                 $cmController->cmA($phone);
@@ -275,6 +283,10 @@ class SMSController extends Controller
             case Str::startsWith($message, 'CM B'):
                 $cmController = new MarriageController();
                 $cmController->cmB($phone);
+                break;
+            case Str::startsWith($message, 'TP'):
+                $pcController = new PregnancyController();
+                $pcController->index($phone);
                 break;
             case Str::startsWith($message, 'TP A'):
                 $pcController = new PregnancyController();
