@@ -363,7 +363,7 @@ class SMSController extends Controller
     }
 
     public function saveRegionInSwahili($phone,$message){
-        Beneficiary::where('phone', $phone)->update(['region' => Str::after($message, 'Naishi mkoa wa')]);
+        Beneficiary::where('phone', $phone)->update(['location' => Str::after($message, 'Naishi mkoa wa')]);
         return $this->sendSMS($phone, "Asante kwa kujibu maswali yetu. 
         Chagua Zipi kati ya vifwatavyo ungependa kujua zaidi:
         \n GBV . Ukatili wa kijinsia na watoto 
@@ -373,7 +373,7 @@ class SMSController extends Controller
     }
 
     public function saveRegionInEng($phone,$message){
-        Beneficiary::where('phone', $phone)->update(['region' => Str::beforeLast($message, 'region')]);
+        Beneficiary::where('phone', $phone)->update(['location' => Str::beforeLast($message, 'region')]);
         return $this->sendSMS($phone, "Thanks for answering our questions. Choose which ones below would you like to know more about: 
             \n GBV . Gender based violence
             \n CM . Child Marriage
