@@ -73,6 +73,7 @@ class SMSController extends Controller
      * @return void
      */
     public function sendSMS($phone, $message){
+        return response()->json('who are you?', 200);
         $api_key= env('BEEM_API_KEY');
         $secret_key = env('BEEM_SECRET_KEY');
 
@@ -151,6 +152,8 @@ class SMSController extends Controller
      * @return void
      */
     public function callback(Request $request){
+
+        return response()->json('who are you?', 200);
 
         $phone = $request->input('from');
         $message = $request->input('message.text');
