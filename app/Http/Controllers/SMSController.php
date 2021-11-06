@@ -138,8 +138,8 @@ class SMSController extends Controller
             return redirect()->back();
         }
 
-        $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
-        toast('Your message has been sent!','success');
+        $this->sendSMS($request->$phone, "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
+        alert()->success('Title','Lorem Lorem Lorem');
         return redirect()->back();
     }
     
