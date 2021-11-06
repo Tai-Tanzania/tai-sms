@@ -12,7 +12,8 @@ use App\Http\Controllers\GBVController;
 use App\Http\Controllers\HIVController;
 use App\Http\Controllers\MarriageController;
 use App\Http\Controllers\PregnancyController;
-Use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class SMSController extends Controller
 {    

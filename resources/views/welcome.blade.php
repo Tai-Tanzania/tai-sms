@@ -191,6 +191,7 @@
     </div>
     
     @include('sweetalert::alert')
+    
     <!-- AOS -->
     <script src="js/aos.js"></script>
     <script>
