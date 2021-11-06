@@ -220,23 +220,23 @@ class SMSController extends Controller
                 $gbvController = new GBVController();
                 $gbvController->index($phone);
                 break;
-            case Str::containsAll($message, 'GBV A'):
+            case Str::containsAll($message, ['GBV', 'A']):
                 $gbvController = new GBVController();
                 $gbvController->gbvA($phone);
                 break;
-            case Str::containsAll($message, 'GBV B'):
+            case Str::containsAll($message, ['GBV','B']):
                 $gbvController = new GBVController();
                 $gbvController->gbvB($phone);
                 break;
-            case Str::containsAll($message, 'GBV C'):
+            case Str::containsAll($message, ['GBV','C']):
                 $gbvController = new GBVController();
                 $gbvController->gbvC($phone);
                 break;
-            case Str::containsAll($message, 'GBV D'):
+            case Str::containsAll($message, ['GBV','D']):
                 $gbvController = new GBVController();
                 $gbvController->gbvD($phone);
                 break;
-            case Str::containsAll($message, 'GBV E'):
+            case Str::containsAll($message, ['GBV', 'E']):
                 $gbvController = new GBVController();
                 $gbvController->gbvE($phone);
                 break;
@@ -244,31 +244,31 @@ class SMSController extends Controller
                 $hivController = new HIVController();
                 $hivController->index($phone);
                 break;
-            case Str::containsAll($message, 'HIV A'):
+            case Str::containsAll($message, ['HIV', 'A']):
                 $hivController = new HIVController();
                 $hivController->hivA($phone);
                 break;
-            case Str::containsAll($message, 'HIV B'):
+            case Str::containsAll($message, ['HIV', 'B']):
                 $hivController = new HIVController();
                 $hivController->hivB($phone);
                 break;
-            case Str::containsAll($message, 'HIV C'):
+            case Str::containsAll($message, ['HIV', 'C']):
                 $hivController = new HIVController();
                 $hivController->hivC($phone);
                 break;
-            case Str::containsAll($message, 'HIV D'):
+            case Str::containsAll($message, ['HIV','D']):
                 $hivController = new HIVController();
                 $hivController->hivD($phone);
                 break;
-            case Str::containsAll($message, 'HIV E'):
+            case Str::containsAll($message, ['HIV','E']):
                 $hivController = new HIVController();
                 $hivController->hivE($phone);
                 break;
-            case Str::containsAll($message, 'HIV F'):
+            case Str::containsAll($message, ['HIV', 'F']):
                 $hivController = new HIVController();
                 $hivController->hivF($phone);
                 break;
-            case Str::containsAll($message, 'HIV G'):
+            case Str::containsAll($message, ['HIV','G']):
                 $hivController = new HIVController();
                 $hivController->hivG($phone);
                 break;
@@ -276,11 +276,11 @@ class SMSController extends Controller
                 $cmController = new MarriageController();
                 $cmController->index($phone);
                 break;
-            case Str::containsAll($message, 'CM A'):
+            case Str::containsAll($message, ['CM','A']):
                 $cmController = new MarriageController();
                 $cmController->cmA($phone);
                 break;
-            case Str::containsAll($message, 'CM B'):
+            case Str::containsAll($message, ['CM','B']):
                 $cmController = new MarriageController();
                 $cmController->cmB($phone);
                 break;
@@ -288,19 +288,19 @@ class SMSController extends Controller
                 $pcController = new PregnancyController();
                 $pcController->index($phone);
                 break;
-            case Str::containsAll($message, 'TP A'):
+            case Str::containsAll($message, ['TP','A']):
                 $pcController = new PregnancyController();
                 $pcController->pcA($phone);
                 break;
-            case Str::containsAll($message, 'TP B'):
+            case Str::containsAll($message, ['TP','B']):
                 $pcController = new PregnancyController();
                 $pcController->pcB($phone);
                 break;
-            case Str::containsAll($message, 'TP C'):
+            case Str::containsAll($message, ['TP','C']):
                 $pcController = new PregnancyController();
                 $pcController->pcC($phone);
                 break;
-            case Str::containsAll($message, 'TP D'):
+            case Str::containsAll($message, ['TP','D']):
                 $pcController = new PregnancyController();
                 $pcController->pcD($phone);
                 break;
