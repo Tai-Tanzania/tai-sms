@@ -174,7 +174,7 @@ class SMSController extends Controller
 
         //region check
         $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
-        $checkRegionInEnglish = Str::startsWith($message, 'region');
+        $checkRegionInEnglish = Str::endsWith($message, 'region');
 
         if($checkIfGreetingInswahili){
            return $this->saveNameInSwahili($phone, $message);
