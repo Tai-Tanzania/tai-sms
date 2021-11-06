@@ -132,7 +132,7 @@ class SMSController extends Controller
             ]);
 
             //send greeting SMS
-            $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
+            $this->sendSMS($request->phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
 
             alert()->success('Title','Lorem Lorem Lorem');
             return redirect()->back();
