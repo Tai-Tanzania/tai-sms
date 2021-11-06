@@ -152,9 +152,16 @@ class SMSController extends Controller
      * @return void
      */
     public function callback(Request $request){
+
+
         $phone = $request->input('from');
         $message = $request->input('message.text');
-        
+
+        if($phone == "255782835136"){
+            return response()->json('stopping spammer', 200);
+        }
+
+
         $b = Beneficiary::firstOrCreate([
             'phone' => $phone
         ]);
@@ -167,7 +174,6 @@ class SMSController extends Controller
         ]);
 
         return response()->json('who are you?', 200);
-
         
 
         //checking if user is in the database
@@ -378,7 +384,7 @@ class SMSController extends Controller
      */
     public function saveNameInSwahili($phone, $message){
         Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'Jina langu ni')]);
-        return $this->sendSMS($phone, "Una umri wa miaka mingapi? Jibu kuanzia \"Nina umri wa miaka ...\" ukimalizia na idadi ya miaka yako.");
+        return $this->sendSMS($phone, "Una umri wa miaka mingapi? Jibu kuanzia \"Nina umri wa miaka 20\" ukimalizia na idadi ya miaka yako.");
     }
 
     public function saveNameInEnglish($phone, $message){
