@@ -148,8 +148,8 @@
                     	<div class="row">
 	                        
 	                        <div class="form-group col-md-12">
-	                            <label for="Email">Your Phone number</label>
-	                            <input type="text" name="phone" class="form-control" id="phone">
+	                            <label for="Email">Enter your Phone number below</label>
+	                            <input type="text" name="phone" placeholder="0744******" class="form-control" id="phone">
 	                        </div>
 	                    </div>
 	                    {{-- <div class="form-group">
