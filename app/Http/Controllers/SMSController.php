@@ -153,7 +153,6 @@ class SMSController extends Controller
      */
     public function callback(Request $request){
 
-
         $phone = $request->input('from');
         $message = $request->input('message.text');
 
