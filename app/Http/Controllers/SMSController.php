@@ -137,7 +137,7 @@ class SMSController extends Controller
             return redirect()->back();
         }
 
-        $this->sendSMS($request->$phone, "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
+        $this->sendSMS($request->phone, "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
         return redirect()->back();
     }
     
