@@ -32,7 +32,7 @@
                     <div class="col-6 align-self-center text-right">
                         <a href="#" 
                         x-on:click="eng = ! eng"
-                        x-text="eng ? 'Badilisha lugha': 'Switch to language'" 
+                        x-text="eng ? 'Badilisha lugha': 'Change language'" 
                         id="chat" class="text-white lead mr-2"></a>
                     </div>
                 </div>
@@ -155,12 +155,11 @@
 	                            <input type="text" name="phone" placeholder="Enter your phone number as follows 0744******" class="form-control" id="phone">
 	                        </div>
 	                    </div>
-	                    {{-- <div class="form-group">
-	                        <label for="message">Message</label>
-	                        <textarea class="form-control" id="message" rows="3"></textarea>
-	                    </div> --}}
                         <div class="row d-flex justify-content-center">
-                            <button type="submit" style="padding: 10px 60px; background: #6c4130" class="btn text-white font-weight-bold my-3">Text us</button>
+                            <button type="submit" 
+                            style="padding: 10px 60px; background: #6c4130"
+                            x-text="eng ? 'Text Us': 'Tutumie Ujumbe'" 
+                            class="btn text-white font-weight-bold my-3"></button>
                         </div>
                     </form>
                 </div>
