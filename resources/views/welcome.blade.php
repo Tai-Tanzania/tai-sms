@@ -42,10 +42,7 @@
             data-aos-once="true" 
             class="display-3 text-white font-weight-bold my-5"></h1>
 
-
-            <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-white my-4" x-text="eng ? 'Get engaged with Tai Tanzania! All information on sexual
-            reproductive health is now at the grasp of your fingertips.' : 'Pata uchumba na Tai Tanzania! Taarifa zote kuhusu afya ya uzazi sasa ziko mikononi mwako.' "></p>
-
+            <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-white my-4" x-text="eng ? 'Get engaged with Tai Tanzania! All information on sexual reproductive health is now at the grasp of your fingertips.' : 'Pata uchumba na Tai Tanzania! Taarifa zote kuhusu afya ya uzazi sasa ziko mikononi mwako.' "></p>
 
             <a href="#" x-text="eng ? 'Text us now': 'Tutumie ujumbe sasa'"  data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" style="background: black" class="btn my-4 text-white font-weight-bold atlas-cta"></a>
         </div>
@@ -105,31 +102,6 @@
         </div>
     </div>
 
-    <!-- client -->
-    {{-- <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
-                </div>
-                <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
-                </div>
-                <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
-                </div>
-                <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
-                </div>
-                <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
-                </div>
-                <div class="col-sm-4 col-md-2 py-2 align-self-center">
-                    <img src="{{ secure_asset('home/img/client-1.png') }}" class="mx-auto d-block">
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <!-- contact -->
     <div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url('img/contact-bk.jpg');">
         <div class="container my-5">
