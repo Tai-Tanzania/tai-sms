@@ -82,7 +82,7 @@
             <div class="row justify-content-between text-center text-md-left">
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
                     <h2 class="font-weight-bold" x-text="eng ? 'Toll free': 'Hamna ushuru'"></h2>
-                    <p class="my-4" style="color: white" x-text="eng ? 'All your chats and information are safely kept with us, encrypted and hidden to ensure confidentiality.': 'Soga na maelezo yako yote yanatunzwa kwa usalama, yamesimbwa na kufichwa ili kuhakikisha usiri.'"></p>
+                    <p class="my-4" style="color: black" x-text="eng ? 'All your chats and information are safely kept with us, encrypted and hidden to ensure confidentiality.': 'Soga na maelezo yako yote yanatunzwa kwa usalama, yamesimbwa na kufichwa ili kuhakikisha usiri.'"></p>
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
                     <img src="{{ asset('img/Lucy_promo.png') }}" style="margin-top: -20px; max-width: 350px" alt="..." class="mx-auto d-block">
