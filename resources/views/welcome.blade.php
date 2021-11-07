@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/aos.css">
 </head>
 
-<body>
+<body x-data="{ eng: true }">
     <!-- banner -->
     <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url('img/tai-kids.png')">
         <div class="container text-center text-md-left">
@@ -30,42 +30,49 @@
                         <img src="img/tailogowhite.png" alt="logo" style="max-width: 200px">
                     </div>
                     <div class="col-6 align-self-center text-right">
-                        <a href="#" id="chat" class="text-white lead mr-2">sw</a>
+                        <a href="#" 
+                        x-on:click="eng = ! eng"
+                        x-text="eng ? 'Badilisha lugha': 'Switch to language'" 
+                        id="chat" class="text-white lead mr-2"></a>
                     </div>
                 </div>
             </header>
-            <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="display-3 text-white font-weight-bold my-5">
-            	Get informed<br>
-            	via messages.
-            </h1>
-            <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-white my-4">
-                Get engaged with Tai Tanzania! All information on sexual <br> 
-                reproductive health is now at the grasp of your fingertips.
-            </p>
-            <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" style="background: black" class="btn my-4 text-white font-weight-bold atlas-cta">Text us now</a>
+            <h1 data-aos="fade" x-text="eng ? 'Get informed \n via messages.': 'Pata taarifa \n kupitia ujumbe.'"  
+            data-aos-easing="linear" data-aos-duration="1000" 
+            data-aos-once="true" 
+            class="display-3 text-white font-weight-bold my-5"></h1>
+
+
+            <p  x-text="eng ? 'Get engaged with Tai Tanzania! All information on sexual \n
+                reproductive health is now at the grasp of your fingertips.': '
+                Pata uchumba na Tai Tanzania! Taarifa zote kuhusu \n afya ya uzazi sasa ziko mikononi mwako.'" 
+                 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000"
+                  data-aos-once="true" class="lead text-white my-4"></p>
+
+
+            <a href="#" x-text="eng ? 'Text us now': 'Tutumie ujumbe sasa'"  data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" style="background: black" class="btn my-4 text-white font-weight-bold atlas-cta"></a>
         </div>
     </div>
         <!-- three-blcok -->
         <div class="container my-1 py-0">
-            <h2 class="text-center font-weight-bold my-5">
-                Our statistics
-            </h2>
+            <h2 class="text-center font-weight-bold my-5" 
+            x-text="eng ? 'Our statistics': 'Takwimu zetu'"></h2>
             <div class="row">
                 <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center"> 
-                    <h4>Messages sent</h4>
+                    <h4 x-text="eng ? 'Messages sent': 'Ujumbe zilizotumwa'"></h4>
                     <p style="font-size: 50px">
                         {{ count($messages) }}
                     </p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
                     
-                    <h4>People reached</h4>
+                    <h4 x-text="eng ? 'People reached': 'Walengwa waliofikiwa'"></h4>
                     <p style="font-size: 50px">
                         {{ count($users) }}
                     </p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                   <h4>Regions reached</h4>
+                   <h4 x-text="eng ? 'Regions reached': 'Mikoa iliofikiwa'"></h4>
                    <p style="font-size: 50px">
                     10
                     </p>
@@ -77,11 +84,10 @@
         <div class="container my-2">
             <div class="row justify-content-between text-center text-md-left">
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
-                    <h2 class="font-weight-bold">Toll free</h2>
-                    <p class="my-4">
-                        Get information on education, health, and updates <br> on Tai, or just chat with us, for free! 
-                        This ensures we can communicate with our stakeholders and beneficaries <br> regardless of their financial status.
-                    </p>
+                    <h2 class="font-weight-bold" x-text="eng ? 'Toll free': 'Hamna ushuru'"></h2>
+                    <p class="my-4" x-text="eng ? 'Get information on education, health, and updates \n on Tai, or just chat with us, for free! 
+                        This ensures we can communicate with our stakeholders and beneficaries \n regardless of their financial status.': 'Pata maelezo kuhusu elimu, afya na masasisho \n kuhusu Tai, au piga gumzo nasi tu, bila malipo!
+                        Hii inahakikisha kwamba tunaweza kuwasiliana na washikadau wetu na wanufaika \n bila kujali hali yao ya kifedha.'"></p>
                     {{-- <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a> --}}
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
@@ -95,10 +101,8 @@
         <div class="container">
             <div class="row justify-content-between text-center text-md-left">
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
-                    <h2 class="font-weight-bold" style="color: white">Safe and reliable</h2>
-                    <p class="my-4" style="color: white">
-                        All your chats and information are safely kept with us, encrypted and hidden to ensure confidentiality.  
-                    </p>
+                    <h2 class="font-weight-bold" style="color: white" x-text="eng ? 'Safe and reliable': 'Salama na ya kuaminika'"></h2>
+                    <p class="my-4" style="color: white" x-text="eng ? 'All your chats and information are safely kept with us, encrypted and hidden to ensure confidentiality.': 'Soga na maelezo yako yote yanatunzwa kwa usalama, yamesimbwa na kufichwa ili kuhakikisha usiri.'"></p>
                     {{-- <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Learn More</a> --}}
                 </div>
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center flex-md-first">
@@ -138,17 +142,16 @@
         <div class="container my-5">
             <div class="row justify-content-between">
                 <div class="col-md-12 text-white">
-                    <h2 class="font-weight-bold text-center">Text Us</h2>
-                    <p class="my-4 text-center">
-                        Sending us your details will <br> allow us to start chatting with you.
-                    </p>
+                    <h2 class="font-weight-bold text-center" x-text="eng ? 'Text Us': 'Tutumie ujumbe'"></h2>
+                    <p class="my-4 text-center" x-text="eng ? ' Sending us your details will \n allow us to start chatting with you.': '
+                    Kututumia maelezo yako \n kutaturuhusu kuanza kupiga gumzo nawe.'"></p>
                     <br>
                     <form action="/sendMsg" method="POST">
                         @csrf
                     	<div class="row">
 	                        
 	                        <div class="form-group col-md-12">
-	                            <label for="Email">Enter your Phone number below</label>
+	                            <label x-text="eng ? 'Enter your Phone number below': 'Ingiza namba yako ya simu'"></label>
 	                            <input type="text" name="phone" placeholder="Enter your phone number as follows 0744******" class="form-control" id="phone">
 	                        </div>
 	                    </div>
@@ -202,6 +205,7 @@
             }, 2000);
         });
     </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @include('sweetalert::alert')
 </body>
 

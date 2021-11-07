@@ -12,6 +12,9 @@ class DashboardController extends Controller
         $messages = Message::all();
         $users = Beneficiary::all();
 
-        return view('dashboard.index', \compact('users','messages'));
+        $englishSpeakers = Beneficiary::where('language_id', 1)->get();
+        $swahiliSpeakers = Beneficiary::where('language_id', 2)->get();
+
+        return view('dashboard.index', \compact('users','messages','englishSpeakers', 'swahiliSpeakers'));
     }
 }
