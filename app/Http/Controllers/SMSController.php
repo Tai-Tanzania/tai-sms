@@ -171,20 +171,19 @@ class SMSController extends Controller
             return response()->json('stopping spammer', 200);
         }
 
-        $b = Beneficiary::firstOrCreate([
-            'phone' => $phone
-        ]);
+        // $b = Beneficiary::firstOrCreate([
+        //     'phone' => $phone
+        // ]);
 
-        Message::create([
-            'from' => $phone,
-            'sms' => $message,
-            'transaction_id' => $request->input('transaction_id'),
-            'beneficiary_id' => $b->id
-        ]);
+        // Message::create([
+        //     'from' => $phone,
+        //     'sms' => $message,
+        //     'transaction_id' => $request->input('transaction_id'),
+        //     'beneficiary_id' => $b->id
+        // ]);
 
-        return response()->json('who are you?', 200);
+        // return response()->json('who are you?', 200);
         
-
         //checking if user is in the database
         $checkIfUserExistsInDB = Beneficiary::where('phone', $phone)->exists();
 
@@ -204,8 +203,7 @@ class SMSController extends Controller
             ]);
 
             //send greeting SMS
-            $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
-            return response()->json('Registration confirmed', 200);
+            return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
         }
 
         //greeting check
