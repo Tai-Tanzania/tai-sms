@@ -37,16 +37,16 @@
                     </div>
                 </div>
             </header>
-            <h1 data-aos="fade" x-text="eng ? 'Get informed \n via messages.': 'Pata taarifa \n kupitia ujumbe.'"  
+            <h1 data-aos="fade" x-text="eng ? 'Get informed via messages.': 'Pata taarifa kupitia ujumbe.'"  
             data-aos-easing="linear" data-aos-duration="1000" 
             data-aos-once="true" 
             class="display-3 text-white font-weight-bold my-5"></h1>
 
 
-            <div x-text="eng ? 'Get engaged with Tai Tanzania! All information on sexual \n
-                reproductive health is now at the grasp of your fingertips.' : 'Pata uchumba na Tai Tanzania! Taarifa zote kuhusu \n afya ya uzazi sasa ziko mikononi mwako.' " 
+            <p x-text="eng ? 'Get engaged with Tai Tanzania! All information on sexual
+                reproductive health is now at the grasp of your fingertips.' : 'Pata uchumba na Tai Tanzania! Taarifa zote kuhusu afya ya uzazi sasa ziko mikononi mwako.' " 
                  data-aos="fade" data-aos-easing="linear" data-aos-duration="1000"
-                  data-aos-once="true" class="lead text-white my-4"></div>
+                  data-aos-once="true" class="lead text-white my-4"></p>
 
 
             <a href="#" x-text="eng ? 'Text us now': 'Tutumie ujumbe sasa'"  data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" style="background: black" class="btn my-4 text-white font-weight-bold atlas-cta"></a>
@@ -84,9 +84,9 @@
             <div class="row justify-content-between text-center text-md-left">
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
                     <h2 class="font-weight-bold" x-text="eng ? 'Toll free': 'Hamna ushuru'"></h2>
-                    <p class="my-4" x-text=" eng ? 'Get information on education, health, and updates <br> on Tai, or just chat with us, for free! 
-                        This ensures we can communicate with our stakeholders and beneficaries <br> regardless of their financial status.' : 'Pata maelezo kuhusu elimu, afya na masasisho <br> kuhusu Tai, au piga gumzo nasi tu, bila malipo!
-                        Hii inahakikisha kwamba tunaweza kuwasiliana na washikadau wetu na wanufaika <br> bila kujali hali yao ya kifedha.' "></p>
+                    <p class="my-4" x-text=" eng ? 'Get information on education, health, and updates on Tai, or just chat with us, for free! 
+                        This ensures we can communicate with our stakeholders and beneficaries regardless of their financial status.' : 'Pata maelezo kuhusu elimu, afya na masasisho kuhusu Tai, au piga gumzo nasi tu, bila malipo!
+                        Hii inahakikisha kwamba tunaweza kuwasiliana na washikadau wetu na wanufaika bila kujali hali yao ya kifedha.' "></p>
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
                     <img src="{{ asset('img/Lucy_promo.png') }}" style="margin-top: -20px; max-width: 350px" alt="..." class="mx-auto d-block">
@@ -141,8 +141,8 @@
             <div class="row justify-content-between">
                 <div class="col-md-12 text-white">
                     <h2 class="font-weight-bold text-center" x-text="eng ? 'Text Us': 'Tutumie ujumbe'"></h2>
-                    <p class="my-4 text-center" x-text="eng ? ' Sending us your details will <br> allow us to start chatting with you.': '
-                    Kututumia maelezo yako \n kutaturuhusu kuanza kupiga gumzo nawe.'"></p>
+                    <p class="my-4 text-center" x-text="eng ? ' Sending us your details will allow us to start chatting with you.': '
+                    Kututumia maelezo yako kutaturuhusu kuanza kupiga gumzo nawe.'"></p>
                     <br>
                     <form action="/sendMsg" method="POST">
                         @csrf
