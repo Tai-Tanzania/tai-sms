@@ -82,7 +82,7 @@
             <div class="row justify-content-between text-center text-md-left">
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
                     <h2 class="font-weight-bold" x-text="eng ? 'Toll free': 'Hamna ushuru'"></h2>
-                    <p class="my-4">
+                    <p class="my-4" style="color: black !important">
                         <span x-text=" eng ? 'Get information on education, health, and updates on Tai, or just chat with us, for free! 
                         This ensures we can communicate with our stakeholders and beneficaries regardless of their financial status.' : 'Pata maelezo kuhusu elimu, afya na masasisho kuhusu Tai, au piga gumzo nasi tu, bila malipo!
                         Hii inahakikisha kwamba tunaweza kuwasiliana na washikadau wetu na wanufaika bila kujali hali yao ya kifedha.' "></span>
