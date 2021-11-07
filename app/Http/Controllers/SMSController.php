@@ -185,19 +185,6 @@ class SMSController extends Controller
 
             return response()->json('stopping spammer', 200);
         }
-
-        // $b = Beneficiary::firstOrCreate([
-        //     'phone' => $phone
-        // ]);
-
-        // Message::create([
-        //     'from' => $phone,
-        //     'sms' => $message,
-        //     'transaction_id' => $request->input('transaction_id'),
-        //     'beneficiary_id' => $b->id
-        // ]);
-
-        // return response()->json('who are you?', 200);
         
         //checking if user is in the database
         $checkIfUserExistsInDB = Beneficiary::where('phone', $phone)->exists();
