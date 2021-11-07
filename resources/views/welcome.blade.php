@@ -82,7 +82,12 @@
             <div class="row justify-content-between text-center text-md-left">
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
                     <h2 class="font-weight-bold" x-text="eng ? 'Toll free': 'Hamna ushuru'"></h2>
-                    <p class="my-4" style="color: black" x-text="eng ? 'All your chats and information are safely kept with us, encrypted and hidden to ensure confidentiality.': 'Soga na maelezo yako yote yanatunzwa kwa usalama, yamesimbwa na kufichwa ili kuhakikisha usiri.'"></p>
+                    <p class="my-4" style="color: black !important">
+                        <span x-text="eng ? 'Get information on education, health, and updates on Tai, or just chat with us, for free! 
+                        This ensures we can communicate with our stakeholders and beneficaries regardless of their financial status.' : 'Pata maelezo kuhusu elimu, afya na masasisho kuhusu Tai, au piga gumzo nasi tu, bila malipo!
+                        Hii inahakikisha kwamba tunaweza kuwasiliana na washikadau wetu na wanufaika bila kujali hali yao ya kifedha.' "></span>
+                    </p>
+                    <p class="my-4" style="color: black" x-text="eng ? 'Get information on education, health, and updates on Tai, or just chat with us, for free! This ensures we can communicate with our stakeholders and beneficaries regardless of their financial status.': 'ata maelezo kuhusu elimu, afya na masasisho kuhusu Tai, au piga gumzo nasi tu, bila malipo! Hii inahakikisha kwamba tunaweza kuwasiliana na washikadau wetu na wanufaika bila kujali hali yao ya kifedha.'"></p>
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
                     <img src="{{ asset('img/Lucy_promo.png') }}" style="margin-top: -20px; max-width: 350px" alt="..." class="mx-auto d-block">
