@@ -121,7 +121,13 @@ class SMSController extends Controller
         $messages = Message::all();
         return \response()->json($messages, 200);
     }
-
+    
+    /**
+     * formMsg
+     *
+     * @param  mixed $request
+     * @return void
+     */
     public function formMsg(Request $request){
 
         $newPhone = ltrim($request->phone, '0');
@@ -138,12 +144,12 @@ class SMSController extends Controller
 
             //send greeting SMS
             $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
-            Alert::success('we will contact you');
+            Alert::success('Welcome to Tai SMS portal! We will contact you.');
             return redirect()->back();
         }
 
         $this->sendSMS($phone, "Greetings! Welcome back to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
-        Alert::info('welcome back, we will contact you');
+        Alert::info('Welcome back! We will contact you.');
         return redirect()->back();
     }
     
