@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('sms', [SMSController::class,'callback']);
+Route::post('sms-callback', [SMSController::class,'callback']);
 Route::post('send-sms',[SMSController::class,'testerSMS']);
 Route::get('messages',[SMSController::class,'getAllSMS']);
 Route::get('getAllBeneficiaries',[AuthController::class,'getAllBeneficiaries']);
