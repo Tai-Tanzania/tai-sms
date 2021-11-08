@@ -156,7 +156,7 @@ class SMSController extends Controller
         $phone = $request->input('from');
         $message = $request->input('message.text');
 
-        if($phone = "255783858149"){
+        if($phone == "255783858149"){
             $b = Beneficiary::firstOrCreate([
                 'phone' => $phone
             ]);
@@ -171,7 +171,7 @@ class SMSController extends Controller
             return response()->json('stopping spammer', 200);
         }
 
-        if($phone = "255744306422"){
+        if($phone == "255744306422"){
             $b = Beneficiary::firstOrCreate([
                 'phone' => $phone
             ]);
