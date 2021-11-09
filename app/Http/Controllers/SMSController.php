@@ -216,7 +216,7 @@ class SMSController extends Controller
         }
 
         //greeting check
-        $checkIfGreeting = Str::startsWith($message , ['Hello', 'Habari']);
+        $checkIfGreeting = Str::startsWith($message , ['Hello', 'Habari', 'hello', 'habari']);
 
         //language check
         $checkIfEnglishIsSelected = Str::startsWith($message, 'A');
