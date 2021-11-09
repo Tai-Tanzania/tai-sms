@@ -13,22 +13,22 @@ class PregnancyController extends Controller
         $user = Beneficiary::where('phone', $phone)->first();   
 
         if($user->language_id == 1){
-            return $smsController->sendSMS($phone, "Adolescent pregnancy is a pregnancy that occurs to a adolescent girl under 20 years of age. Adolescent girls are impregnated after engaging in unprotected sexual intercourse, and, lack of relevant knowledge on reproductive health. 
-            One in every four adolescent girls under 18 years is pregnant or has given birth.  
+            return $smsController->sendSMS($phone, "Teenage pregnancy  occurs to adolescent girl under 20 years of age. 
+             Statistics shows that, one in every four adolescent girls under 18 years is pregnant or has given birth.    
              Choose what you want to know more about: 
-            \n TP A. Drivers to teenage pregnancy/What are the causes?
+            \n TP A. Drivers to teenage pregnancy.
             \n TP B. Signs of pregnancy/ How will I know if I’m pregnant?
-            \n TP C. Effects of teenage pregnancies/What are effect o teenage pregnancy?
+            \n TP C. Effects of teenage pregnancies.
             \n TP D. Preventive Measure of teenage pregnancies/ How can I prevent myself rom getting pregnant?");
         }
 
-        return $smsController->sendSMS($phone, "Mimba za utotoni ni ujauzito anaoupata msichana mwenye umri chini ya miaka 20. Wasichana hupata mimba kutokana na kufanya mapenzi bila kutumia kinga na kukosa elimu sahihi ya afya uzazi.
-        Msichana mmoja kati ya wanne walio chini ya miaka 18 amepata mimba au amejifungua mtoto.         
+        return $smsController->sendSMS($phone, "Mimba za utotoni ni ujauzito anaoupata msichana mwenye umri chini ya miaka 20.
+         Takwimu zinaonesha katika wasichana wanne wenye umri chini ya miaka 18 mmoja huwa ni mjamzito au tayari ameshazaa.         
          Chagua nini unataka kujua zaidi: 
-        \n TP A. Dalili za ujauzito/ Nitajujae kama nina ujauzito?
-        \n TP B. Vitu gani vinaweza kupelekea kupata mimba za utotoni?
-        \n TP C. Nitajuaje kama nina ujauzito?
-        \n TP D. Madhara ya mimba za utototni/Mimba za utotoni zina madhara gani?"); 
+        \n TP A. Vitu gani vinaweza kupelekea kupata mimba za utotoni?
+        \n TP B. Dalili za ujauzito/ Nitajujae kama nina ujauzito?
+        \n TP C. Madhara ya mimba za utototoni
+        \n TP D. Jinsi ya kuzuia mimba za utotoni/ Ninawezaje kuepuka mimba za utotoni?"); 
     }
 
 
@@ -38,24 +38,27 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "- Lack of information about sexual and reproductive health may lead to unprotected sex,
+             "- Lack of information about sexual and reproductive health
              \n - Family and community pressure that lead to early marriage,
              \n - School dropout,
              \n - Sexual violence or child rape,
              \n - Poverty,
+             \n - Unprotected sex
              \n - Exposure to risk environment,
              \n - Peer pressure, and
-             \n - Bad taboos practices");
+             \n - Poor traditions and taboos for example; Not discussing about sexual reproductive health with a parent");
         }
 
         return $smsController->sendSMS($phone, 
-        "- Kutoona siku zako za hedhi au kupata hedhi yam matone matone,
-        \n - Matiti kuongezeka ukubwa na wakati mwingine yanauma,
-        \n - Kichefuchefu au kutapika na mara nyingi asubuhi,
-        \n - Kuhisi kizunguzungu na/au kuzimia,
-        \n - Mwili kuongezeka uzito, 
-        \n - Kuhisi uchovu, na
-        \n - Tumbo kuongezeka na kuwa kubwa.");  
+        "- Kukosa elimu ya afya ya uzazi
+        \n - Shinikizo la familia na jamii kuolewa katika umri mdogo,
+        \n - Kukatisha masomo,
+        \n - Ukatili wa kingono au kubakwa,
+        \n - Umasikini, 
+        \n - Ngono zembe katika umri mdogo,
+        \n - Mazingira hatarishi
+        \n - Shinikizo rika na
+        \n - Mila na desturi potofu mfano kutokuongelea masuala ya afya ya uzazi na mzazi.");  
     }
 
 
@@ -71,7 +74,7 @@ class PregnancyController extends Controller
              \n - Feeling dizzy and fainting,
              \n - Weight gain,
              \n - Feeling tired, and
-             \n - Swollen abdomen belly");
+             \n - Swollen abdomen/belly");
         }
 
         return $smsController->sendSMS($phone, 
@@ -95,17 +98,17 @@ class PregnancyController extends Controller
              \n - High chances of premature infants
              \n - High chances of getting eclampsia which might lead to death.
              \n - High chances of getting fistula.
-             \n - Getting genital problems, such as heavy bleeding and severe rupture during childbirth. 
+             \n - Heavy bleeding and severe rupture during childbirth. 
              \n - Severe chronic pain or infertility due to immature reproductive organs.
              \n - School dropout.");
         }
 
         return $smsController->sendSMS($phone, 
-        "- Uwezekano mkubwa wa kupata tatizo la fistula,
-         \n - Unahatarisha uhai wako pamoja na wa mtoto,
+        "- Unahatarisha uhai wako pamoja na wa mtoto,
          \n - Kuna uwezekano mkubwa wa mtoto kuzaliwa njiti,
          \n - Kupata kifafa cha mimba ambacho huweza kusababisha kifo cha mama na/au mtoto,
-         \n - Kupata matatizo ya viungo vya uzazi, kama vile kutokwa damu nyingi na kuchanika sana wakati wa kujifungua,
+         \n - Uwezekano mkubwa wa kupata tatizo la fistula,
+         \n - Kutokwa damu nyingi na kuchanika sana wakati wa kujifungua,
          \n - Kupata uchungu wa muda mrefu au kushindwa kujifungua kutokana na viungo vya uzazi/ nyonga kutokukomaa,
          \n - Uwezekano mkubwa wa kukatiza masomo.");  
     }
@@ -120,7 +123,7 @@ class PregnancyController extends Controller
              "- Seek right information on sexual reproductive health in health centers. 
              \n - Open up to a trusted person such as parent, health care provider etc. 
              \n - Avoid being tempted with luxurious goods such as money, transport lifts, mobile phones etc.
-             \n - Avoid the use of alcohol and illicit drugs. 
+             \n - Avoid the use of alcohol and illicit drugs which may lead to unsafe sex. 
              \n - Keep good company and avoid peer pressure. 
              \n - Seek help when being raped or forced to get married at young age. 
              \n - Avoid unprotected sex. 
@@ -128,13 +131,12 @@ class PregnancyController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "- Epuka mazingira hatarishi mfano, ngoma za usiku na masoko ya usiku,
-        \n - Tafuta taarifa sahihi kuhusu afya ya uzazi kutoka kwenye kituo cha afya,
-        \n - Kuwa huru kuongea na mtu unaemuamini,
-        \n - Epuka vishawishi vinavyweza kupelekea kupata mimba,
+        "- Tafuta taarifa sahihi kuhusu afya ya uzazi kutoka kwenye kituo cha afya,
+        \n - Kuwa huru kuongea na mtu unaemuamini mfano mzazi au mtaalamu wa afya,
+        \n - Epuka tamaa ya vitu mfano pesa, lifti n.k,
         \n - Epuka matumizi ya vilevi yanayochochea kufanya ngono zembe,
         \n - Kuwa na marafiki wazuri,
-        \n - Toa taarifa kwenye dawati lainsia au kituo chapolisi  endapo utapata tishio la kubakwa, utabakwa au kulazimishwa kuolewa, na
+        \n - Toa taarifa kwenye dawati la jinsia au kituo cha polisi  endapo utapata tishio la kubakwa, utabakwa au kulazimishwa kuolewa, na
         \n - Epuka ngono zembe.");  
     }
 
