@@ -1,8 +1,8 @@
 @component('layouts.dashboard')
-@push('css')
+@section('css')
   <!-- Custom styles for this page -->
-  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-@endpush
+  <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+@endsection
     
         <main>
             <div class="container-fluid px-4">
@@ -47,13 +47,13 @@
                 </div>
             </div>
         </main>
+@endcomponent
 
-@push('js')
+@section('js')
   <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
   <!-- Page level custom scripts -->
-  <script src="js/demo/datatables-demo.js"></script>
-@endpush
-@endcomponent
+  <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+@endsection
