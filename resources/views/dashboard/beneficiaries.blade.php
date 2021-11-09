@@ -20,7 +20,6 @@
                                     <th>Gender</th>
                                     <th>Location</th>
                                     <th>Age</th>
-                                    <th>Language</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -30,7 +29,6 @@
                                     <th>Gender</th>
                                     <th>Location</th>
                                     <th>Age</th>
-                                    <th>Language</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -41,7 +39,6 @@
                                     <td>{{$beneficiary['gender'] }}</td>
                                     <td>{{$beneficiary['location'] }}</td>
                                     <td>{{$beneficiary['age'] }}</td>
-                                    <td>{{$beneficiary->lang->language_name}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
