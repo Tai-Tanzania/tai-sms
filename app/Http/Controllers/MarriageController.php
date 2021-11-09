@@ -18,9 +18,9 @@ class MarriageController extends Controller
             \n CM B. Call for action for child marriage/ What can I do to prevent child marriage?");
         }
 
-        return $smsController->sendSMS($phone, "Ndoa za utotoni ni muungano wa jadi, dini au isiyo rasmi ambapo ama bibi au bwana harusi ni chini ya umri wa miaka 18. Chagua nini unatataka kujua zaidi kuhusu Ndoa za utotoni: 
-         \n CM A. Kuna madhara gani kuolewa katika umri mdogo?
-         \n CM B. Nifanye nini kuepuka ndoa za utotoni?");  
+        return $smsController->sendSMS($phone, "Ndoa ya utotoni inarejelea ndoa yoyote rasmi au muungano usio rasmi kati ya mtoto aliye chini ya umri wa miaka 18 na mtu mzima au mtoto mwingine. Chagua nini unatataka kujua zaidi kuhusu Ndoa za utotoni: 
+         \n CM A. Yapi ni madhara ya ndoa za utotoni?
+         \n CM B. Nifanye nini kuzuia ndoa za utotoni?");  
     }
 
     public function cmA($phone){
@@ -30,18 +30,18 @@ class MarriageController extends Controller
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
              "- Exposure to domestic and sexual violence from a husband.
-            \n - Teenage/early pregnancy that might increase the chance for negative health impacts such as maternal and infant death.
-            \n - School dropout which will result to lack of education
-            \n - Economic dependent,
-            \n - Loss of freedom and autonomous decision for the future.");
+            \n - Teenage pregnancy that might increase the chance for negative health impacts such as maternal and infant death.
+            \n - Lack of education due to school dropout
+            \n - Economic dependent, and
+            \n - Loss of freedom and autonomous decision.");
         }
 
         return $smsController->sendSMS($phone, 
-        "- Ukatili wa kijinsia na kingono kutoka kwa mume au mke,
-        \n - Mimba za utotoni zinazoweza kusababisha kifo,
-        \n - Kukatisha masomo,
+        "- Unyanyasaji wa majumbani na kingono kutoka kwa mume.
+        \n - Mimba za utotoni zinazoweza kuongeza athari mbaya kiafya kama vile kifo cha mama na mtoto,
+        \n - Ukosefu wa elimu kwa sababu ya kuacha shule
         \n - Kuwa tegemezi kiuchumi, na
-        \n - Kukosa uhuru na kukosa fursa ya kufanya maamuzi.");  
+        \n - Kukosa uhuru na uamuzi binafsi.");  
     }
 
     public function cmB($phone){
@@ -56,8 +56,8 @@ class MarriageController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "- Zingatia zaidi elimu (masomo) na afya yako.
-        \n - Toa taaria kwenye dawati la insia kwenye kituo chochoe cha polisi, afisa ustawi wa jamii, mwalimu au mtu unaemuamini endapo utalazimishwa kuolewa.
+        "- Zingatia elimu na ustawi wako na sio ndoa.
+        \n - Toa taaria kwenye dawati la jinsia kwenye kituo chochote cha polisi, afisa ustawi wa jamii, endapo utalazimishwa kuolewa au kuona binti analazimishwa kuolewa.
         \n - Paza sauti kwa familia yako na jamii kukataa ndoa za utotoni");  
     }
 }
