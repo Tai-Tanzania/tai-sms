@@ -73,7 +73,6 @@ class SMSController extends Controller
      * @return void
      */
     public function sendSMS($phone, $message){
-        // return response()->json('who are you?', 200);
         $api_key= env('BEEM_API_KEY');
         $secret_key = env('BEEM_SECRET_KEY');
 
@@ -164,7 +163,7 @@ class SMSController extends Controller
         $phone = $request->input('from');
         $message = $request->input('message.text');
 
-        if($phone = "255783858149"){
+        if($phone == "255783858149"){
             $b = Beneficiary::firstOrCreate([
                 'phone' => $phone
             ]);
@@ -179,7 +178,7 @@ class SMSController extends Controller
             return response()->json('stopping spammer', 200);
         }
 
-        if($phone = "255744306422"){
+        if($phone == "255744306422"){
             $b = Beneficiary::firstOrCreate([
                 'phone' => $phone
             ]);
