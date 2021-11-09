@@ -13,26 +13,23 @@ class HIVController extends Controller
         $user = Beneficiary::where('phone', $phone)->first();
 
         if($user->language_id == 1){
-            return $smsController->sendSMS($phone, "Human Immunodefiency Virus (HIV) is a retrovirus which causes AIDS. HIV targets the immune system and weakens people’s defense against many infections. Choose what you want to know more about: 
-            \n HIV A. Myth about HIV
+            return $smsController->sendSMS($phone, "HIV is a parasite that causes AIDS by attacking the body's immune system. When a person's immune system is weakened it causes the body to fail to fight HIV and thus allow opportunistic infections to penetrate more easily. Choose what you want to know more about: 
+            \n HIV A. Myth and misconceptions about HIV
             \n HIV B. How HIV is transmitted
             \n HIV C. Effects of HIV/AIDS
             \n HIV D. Risk behaviours that may lead to HIV infection
             \n HIV E. Signs and Symptoms of HIV
-            \n HIV F. HIV testing 
+            \n HIV F. HIV/AIDS testing 
             \n HIV G. Preventive measures of HIV/AIDS");
         }
 
-        return $smsController->sendSMS($phone, "Virus Vya Ukimwi (VVU) ni vimelea vinavyosababisha
-         hali ya UKIMWI kwa kushambulia mfumo wa kinga ya mwili. Kinga ya mwili wa mtu inaposhuka
-          husababisha mwili kushindwa kupambana na VVU na hivyo kuruhusu magonjwa nyemelezi
-           kupenya kirahisi. . Chagua nini unatataka kujua zaidi kuhusu VVU: 
+        return $smsController->sendSMS($phone, "VVU ni vimelea vinavyosababisha hali ya UKIMWI kwa kushambulia mfumo wa kinga ya mwili. Kinga ya mwili wa mtu inaposhuka husababisha mwili kushindwa kupambana na VVU na hivyo kuruhusu magonjwa nyemelezi kupenya kirahisi. Chagua nini unatataka kujua zaidi kuhusu VVU: 
          \n HIV A. Imani potofu kuhusu VVU
          \n HIV B. Mtu anambukizwajie VVU?
-         \n HIV C. Madhara ya HIV
+         \n HIV C. Madhara ya Ukimwi
          \n HIV D. Tabia hatarishi zinazopelekea maambukizi ya VVU
-         \n HIV E. Upimaji virusi vya UKIMWI
-         \n HIV F. Ushauri nasaha
+         \n HIV E. Ishara na dalili za VVU/UKIMWI
+         \n HIV F. Upimaji wa VVU/UKIMWI
          \n HIV G. Jinsi ya kuzuia maambukizi ya virusi vya UKIMWI");  
     }
 
@@ -51,12 +48,11 @@ class HIVController extends Controller
         }
 
         return $smsController->sendSMS($phone,
-            "- Kuwa na wapenzi wengi ndio uanamume.
-            \n - Kuwa na wapenzi wengi ni ishara ya uzuri.
-            \n - VVU huwapata watu wazima na sio vijana wadogo.
+            "- Kuwa na wapenzi wengi ndio uanamume au uzuri wa msichana.
+            \n - VVU huwapata watu wazima na sio vijana wa rika barehe.
             \n - Kutokuwa na wapenzi wengi nikiwa mdogo itaniongezea hamu ya mapenzi nikiwa mtu mzima.
-            \n - Kuwa na wapenzi wengi ni kwenda na wakati
-            \n - Kutumia kondom wakati wa kujamiiana kunapunguza raha, ni sawa na kula ndizi na ganda lake.");
+            \n - Kuwa na wapenzi wengi ni kwenda na wakati (kila mtu anafanya hivyo).
+            \n - Kutumia kondom wakati wa kujamiiana ni sawa na kula ndizi na ganda lake.");
     }
 
     public function hivB($phone){
@@ -67,15 +63,15 @@ class HIVController extends Controller
             return $smsController->sendSMS($phone,
             "- Unprotected sexual intercourse with an infected partner,
             \n - Exposure to infected blood and blood products like sharing of contaminated needles, razor blades, and other injecting equipment,
-            \n - Infected mother to unborn child, during child delivery, or breast feeding, and
-            \n - certain body fluids like semen, and vaginal fluids from a infected person. ");
+            \n - Infection from an HIV-positive mother to a baby born during pregnancy, childbirth or breastfeeding.
+            \n - Certain body fluids like semen, and vaginal fluids from an infected person. ");
         }
 
         return $smsController->sendSMS($phone,
             "- VVU inawezwa kuambukizwa kwa kufanya ngono zembe na mtu anayeishi na VVU
-            \n - Kwa njia ya damu yenye maambukizi au vifaa vyenye damu kama kushirikiana vifaa vyenye ncha kali kama sindano, nyembe au vinginevyo.
-            \n - Maabukizi kutoka kwa mama mwenye VVU kwenda kwa mtoto ambae ajazaliwa wakati wa ujauzito, kujifungia au kunyonyesha.
-            \n - Pia, baadhi ya maji maji kama vile shahawa au maji maji ya uke kutoka kwa mtu anayeishi na VVU.
+            \n - Kwa njia ya damu yenye maambukizi ya VVU au vifaa vyenye damu ya maambukizi ya VVU kama kushirikiana vifaa vyenye ncha kali kama sindano, nyembe au vinginevyo.
+            \n - Maambukizi kutoka kwa mama mwenye VVU kwenda kwa mtoto ambae ajazaliwa wakati wa ujauzito, kujifungua au kunyonyesha.
+            \n - Majimaji fulani ya mwili kama shahawa, na maji maji ya ukeni kutoka kwa mtu aliyeambukizwa.
             ");
     }
 
@@ -85,19 +81,19 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-            "- A person living with HIV/AIDS may have to regularly miss school to attend clinic appointments. This can affect their educational achievement and sense of fitting in with peers
+            "- A person living with HIV/AIDS may have to regularly miss school to attend clinic appointments. This can affect their educational achievement and sense of fitting in with peers.
             \n - A person living with HIV/AIDS may experience cognitive challenges such as learning difficulties and memory problems. 
-            \n - A person with HIV/AIDS often stigma and discrimination
+            \n - A person with HIV/AIDS often stigmatized and discriminated
             \n - A person living with HIV/AIDS experiences emotional challenges such as anger, depression etc.           
             \n - Regular illness may prevent teenagers living with HIV/AIDS from going to school regularly, making friends, learning sports and hobbies.");
         }
 
         return $smsController->sendSMS($phone,
-            "- Utakuwa na uwezekano wa kukosa masomo kutokana na kulazimika kuhudhuria kliniki au kuwa na miadi na daktari.
-            \n - Unaweza kupata changamoto kwenye masomo yako hasa katika masuala kumbukumbu ya masomo kwa kuwa VVU/UKIMWI vinaweza kuleta changamoto katika ukuaji wa ubongo
-            \n - Unaweza kupata Unyanyapaa kutoka kwa jamii inayokuzunguka
-            \n - Unaweza kupata changamoto mbalimbali za kihisia
-            \n - UKIMWI kama magonjwa mengine unaweza kukufanya ushindwe kwenda shule kila wakati pia kupunguza kazi na shughuli ulizozoea kuzifanya mara kwa mara.");
+            "- Mtu anayeishi VVU/UKIMWI anaweza kukosa masomo mara kwa mara kutokana na kulazimika kuhudhuria kliniki au kuwa na miadi na daktari.
+            \n - Mtu anayeishi na VVU/UKIMWI anaweza kupata changamoto za kiakili kama vile matatizo ya kujifunza na matatizo ya kumbukumbu.
+            \n - Mtu aliye na VVU/UKIMWI mara nyingi hunyanyapaliwa na kubaguliwa.
+            \n - Mtu anayeishi na VVU/UKIMWI hupata changamoto za kihisia kama vile hasira, mfadhaiko, n.k.
+            \n - Magonjwa ya mara kwa mara yanaweza kuwazuia vijana wanaoishi na VVU/UKIMWI kwenda shule mara kwa mara, kupata marafiki, kujifunza michezo na mambo wanayoyapenda.");
     }
 
     public function hivD($phone){
@@ -109,16 +105,16 @@ class HIVController extends Controller
             "- Having unprotected sex,
             \n - Having multiple partners,
             \n - Uses of drugs and alcohol,
-            \n - Incorrect and inconsistence use of protection,
+            \n - Incorrect and inconsistence use of condom,
             \n - Sharing sharp tools eg needles, razor blades etc.");
         }
 
         return $smsController->sendSMS($phone,
-            "- Kushiriki ngono isiyo salama.
-            \n - Kuwa na mwenza zaid ya mmoja.
-            \n - Matumizi ya vilevi.
-            \n - Matumizi yasiyo sahihi ya kondom.
-            \n - Kuchangia vitu vyenye ncha kali. Mfano; sindano");
+            "- Kufanya ngono bila kinga.
+            \n - Kuwa na mwenza zaidi ya mmoja.
+            \n - Matumizi ya madawa ya kulevya na pombe.
+            \n - Matumizi yasiyo sahihi ya kondomu.
+            \n - Kuchangia vitu vyenye ncha kali. Mfano; sindano, wembe n.k.");
     }
 
     public function hivE($phone){
@@ -127,20 +123,62 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-            "- Swollen lymph nodes.
-            \n - Intermittent fever and chills,
-           \n - Rash,
+            "- Intermittent fever and chills.
+           \n - Rashes,
            \n - Night sweats,
            \n - Intermittent muscle aches and fatigue
            \n - Sore throat");
         }
 
-        // return $smsController->sendSMS($phone,
-        //     "• Kushiriki ngono isiyo salama.
-        //     \n • Kuwa na mwenza zaid ya mmoja.
-        //     \n • Matumizi ya vilevi.
-        //     \n • Matumizi yasiyo sahihi ya kondom.
-        //     \n • Kuchangia vitu vyenye ncha kali. Mfano; sindano");
+         return $smsController->sendSMS($phone,
+             "- Homa na baridi ya mara kwa mara,
+             \n - Vipele mwilini
+             \n - Kutokwa na jasho usiku
+             \n - Maumivu ya misuli ya hapa na pale na uchovu
+             \n - Kuuma koo.");
+    }
+
+    public function hivF($phone){
+        $smsController = new SMSController();
+        $user = Beneficiary::where('phone', $phone)->first();
+
+        if ($user->language_id ==1){
+            return $smsController->sendSMS($phone,
+            "HIV testing services (HTS) are the gateway to access HIV care, treatment, prevention, and support services.
+             These services are free and voluntary and can be accessed in health care centers.");
+        }
+
+        return $smsController->sendSMS($phone,
+        "Huduma za kupima VVU ni lango la kupata huduma za matunzo, matibabu, kinga na usaidizi wa VVU. 
+        Huduma hizi ni za bure na za hiari na zinaweza kupatikana katika vituo vya huduma za afya.");
+
+    }
+
+    public function hivG($phone){
+        $smsController = new SMSController();
+        $user = Beneficiary::where('phone', $phone)->first();
+
+        if ($user->language_id ==1){
+            return $smsController->sendSMS($phone,
+            "- Abstain from sex at a young age,
+           \n - Use condoms correctly and consistently
+           \n - Avoid being influenced by peer pressure on sexual practices, alcohol, and drug use.
+           \n - Open up and seek advice from trusted persons such as parents, teachers, health workers, religious leaders, etc.
+           \n - Avoid watching sexually arousing content.
+           \n - Avoid sharing sharp objects such as razor blades, needles, etc.
+           \n - Use of antiretroviral drugs (ARVs) for prevention
+           \n - Elimination of mother-to-child transmission of HIV.");
+        }
+
+        return $smsController->sendSMS($phone,
+        "- Epuka ngono katika uri mdogo
+       \n - Tumia kondomu kwa usahihi na kwa uthabiti
+       \n - Epuka kuathiriwa na shinikizo rika juu ya vitendo vya ngono zembe, pombe, na matumizi ya madawa ya kulevya.
+       \n - Funguka na tafuta ushauri kutoka kwa watu unaowaamini kama vile wazazi/walezi, waalimu, wahudumu wa afya n.k.
+       \n - Epuka kutazama maudhui yanayoamsha hisia za kufanya ngono.
+       \n - Epuka kuchangia vitu vyenye ncha kali kama vile wembe, sindano, n.k.
+       \n - Matumizi ya dawa ya kuimalisha seli za damu na kurefusha maisha (ARV).
+       \n - Kutokomeza maambukizi ya VVU kutoka kwa mama mwenye VVU kwenda kwa mtoto.");
     }
 
 }
