@@ -25,6 +25,8 @@ Route::post('sendMsg', [SMSController::class,'formMsg']);
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard',[DashboardController::class,'index']);
+    Route::get('messages',[DashboardController::class,'display']);
+    Route::get('beneficiaries',[DashboardController::class,'show']);
 
     Route::get('logout', [AuthController::class,'logout']);
 });

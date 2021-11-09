@@ -17,4 +17,15 @@ class DashboardController extends Controller
 
         return view('dashboard.index', \compact('users','messages','englishSpeakers', 'swahiliSpeakers'));
     }
+
+    public function show(){
+
+        $users = Beneficiary::all();
+        return view('dashboard.beneficiaries', ['beneficiaries'=>$users]);
+    }
+
+    public function display(){
+        $messages = Message::all(); 
+        return view('dashboard.messages', ['messages'=>$messages]);
+    }
 }
