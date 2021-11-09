@@ -32,7 +32,7 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+            return redirect('/dashboard');
         }
 
         return back()->withErrors([
