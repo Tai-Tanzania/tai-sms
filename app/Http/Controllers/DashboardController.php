@@ -18,13 +18,13 @@ class DashboardController extends Controller
         return view('dashboard.index', \compact('users','messages','englishSpeakers', 'swahiliSpeakers'));
     }
 
-    public function show(){
+    public function beneficiaries(){
         $users = Beneficiary::with('lang')->get();
         return view('dashboard.beneficiaries', ['beneficiaries'=>$users]);
     }
 
-    public function display(){
+    public function messages(){
         $messages = Message::with('beneficiary')->get(); 
-        return view('dashboard.messages', ['messages'=>$messages]);
+        return view('dashboard.messages', \compact('messages'));
     }
 }

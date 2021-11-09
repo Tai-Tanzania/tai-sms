@@ -1,6 +1,3 @@
-@section('css')
-@endsection
-
 @component('layouts.dashboard')
 
 <div>
@@ -93,7 +90,3 @@
 </div>
 
 @endcomponent
-
-@section('js')
-    
-@endsection
