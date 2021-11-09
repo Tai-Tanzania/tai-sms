@@ -1,7 +1,7 @@
 @component('layouts.dashboard')
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Beneficiaries</h1>
+<h1 class="h3 mb-2 text-gray-800">Messages</h1>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">

@@ -82,10 +82,10 @@ class GBVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, 
-            "- If I tell someone that I’m being abused I might be beaten or blamed,
-            \n - If I tell someone that I’m being abused they will not believe me,
-            \n - If I tell someone that I’m being abused the culprit might harm me,
-            \n - If I open-up that I’m being abused I might be disowned by my family, and
+            "- If I tell someone that I\’m being abused I might be beaten or blamed,
+            \n - If I tell someone that I\’m being abused they will not believe me,
+            \n - If I tell someone that I\’m being abused the culprit might harm me,
+            \n - If I open-up that I\’m being abused I might be disowned by my family, and
             \n - If I report to the police that I’m being abused I might end up in jail");
         }
 
@@ -163,7 +163,7 @@ class GBVController extends Controller
             return $smsController->sendSMS($phone, 
                 "- Tell a trusted adult (teacher, parent, religious leader) or report to the gender and children desk at the nearest police station,	
                 \n - Avoid risk environment.
-                \n - Avoid accepting gifts or money from people you don’t know, as it results to abuse.
+                \n - Avoid accepting gifts or money from people you don\’t know, as it results to abuse.
                 \n - Scream to get help if someone tries to touch inappropriately or beating you.
                 \n - Don’t keep any kind of Gender Based Violence a secret, you should talk to trusted adult who will take you seriously and help you, and
                 \n - Keep telling trusted adults about an act of abuse until someone believes you");
