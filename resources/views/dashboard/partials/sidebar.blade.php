@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -23,13 +23,13 @@
     <hr class="sidebar-divider">
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="beneficiaries">
             <i class="far fa-fw fa-address-card"></i>
             <span>Beneficiaries</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="messages">
             <i class="far fa-fw fa-address-card"></i>
             <span>Messages</span></a>
     </li>
