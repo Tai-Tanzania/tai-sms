@@ -19,7 +19,6 @@ class DashboardController extends Controller
     }
 
     public function show(){
-
         $users = Beneficiary::with('lang')->get();
         return view('dashboard.beneficiaries', ['beneficiaries'=>$users]);
     }

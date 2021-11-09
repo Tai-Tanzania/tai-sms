@@ -26,7 +26,7 @@
     <link href="css/sb-admin-2.css?v.2" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-    @stack('css')
+    @yield('css')
 </head>
 
 <body id="page-top">
@@ -97,7 +97,7 @@
             </div>
         </div>
     </div>
-    @stack('js')
+    @yield('js')
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
