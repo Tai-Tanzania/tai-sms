@@ -104,7 +104,7 @@ class SMSController extends Controller
             CURLOPT_POSTFIELDS => json_encode($postData)
         ));
 
-        $response = curl_exec($ch);
+       return $response = curl_exec($ch);
 
         if($response === FALSE){
                 echo $response;
