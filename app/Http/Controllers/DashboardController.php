@@ -20,12 +20,12 @@ class DashboardController extends Controller
 
     public function show(){
 
-        $users = Beneficiary::all();
+        $users = Beneficiary::with('lang')->get();
         return view('dashboard.beneficiaries', ['beneficiaries'=>$users]);
     }
 
     public function display(){
-        $messages = Message::all(); 
+        $messages = Message::with('beneficiary')->get(); 
         return view('dashboard.messages', ['messages'=>$messages]);
     }
 }
