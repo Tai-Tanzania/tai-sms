@@ -13,7 +13,7 @@ class HIVController extends Controller
         $user = Beneficiary::where('phone', $phone)->first();
 
         if($user->language_id == 1){
-            return $smsController->sendSMS($phone, "HIV is a parasite that causes AIDS by attacking the body's immune system. When a person's immune system is weakened it causes the body to fail to fight HIV and thus allow opportunistic infections to penetrate more easily. Choose what you want to know more about: 
+            return $smsController->sendSMS($phone, "HIV is a parasite that causes AIDS by attacking the body\'s immune system. When a person's immune system is weakened it causes the body to fail to fight HIV and thus allow opportunistic infections to penetrate more easily. Choose what you want to know more about: 
             \n HIV A. Myth and misconceptions about HIV
             \n HIV B. How HIV is transmitted
             \n HIV C. Effects of HIV/AIDS
@@ -39,7 +39,7 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-            "- Having multiple sexual partners is a sign of manhood or girls’ beauty.
+            "- Having multiple sexual partners is a sign of manhood or girls\’ beauty.
             \n - HIV is for older people and not adolescents.
             \n - Not having multiple partners during my adolescence will enhance my sexual desire in my adulthood
             \n - Having multiple sexual partners is fashion (everyone is doing it)

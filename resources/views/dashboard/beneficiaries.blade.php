@@ -40,6 +40,9 @@
                             {{ $b->name }}
                         </td>
                         <td>
+                            {{ $b->phone }}
+                        </td>
+                        <td>
                             {{ $b->gender }}
                         </td>
                         <td>

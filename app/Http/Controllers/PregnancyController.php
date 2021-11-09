@@ -17,7 +17,7 @@ class PregnancyController extends Controller
              Statistics shows that, one in every four adolescent girls under 18 years is pregnant or has given birth.    
              Choose what you want to know more about: 
             \n TP A. Drivers to teenage pregnancy.
-            \n TP B. Signs of pregnancy/ How will I know if I’m pregnant?
+            \n TP B. Signs of pregnancy/ How will I know if I\’m pregnant?
             \n TP C. Effects of teenage pregnancies.
             \n TP D. Preventive Measure of teenage pregnancies/ How can I prevent myself rom getting pregnant?");
         }
