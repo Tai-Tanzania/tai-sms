@@ -212,7 +212,7 @@ class SMSController extends Controller
             ]);
 
             //send greeting SMS
-            return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type A to communicate in English or B to communicate in Swahili.");
+            return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type 1 to communicate in English or 2 to communicate in Swahili.");
         }
 
         //greeting check
@@ -232,8 +232,8 @@ class SMSController extends Controller
         $checkIfLanguageInEnglish = Str::containsAll($message, ['My', 'name', 'is']);
 
         //gender check
-        $checkIfMale = Str::startsWith($message, ['3']);
-        $checkIfFemale = Str::startsWith($message, ['4']);
+        $checkIfMale = preg_match("~\b3\b~",$message);
+        $checkIfFemale = preg_match("~\b4\b~",$message);
 
         //region check
         $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
@@ -430,7 +430,7 @@ class SMSController extends Controller
 
     public function saveAgeInEnglish($phone, $message){
         Beneficiary::where('phone', $phone)->update(['age' => Str::between($message, 'am', 'years')]);
-        return $this->sendSMS($phone, "What is your gender? Answer C if male; D if female.");
+        return $this->sendSMS($phone, "What is your gender? Answer 3 if male; 4 if female.");
     }
 
     public function saveGender($phone,$message){
