@@ -220,8 +220,8 @@ class SMSController extends Controller
         $checkIfGreetingSwahili = Str::startsWith($message , ['Habari', 'habari', 'ENG']);
 
         //language check
-        $checkIfEnglishIsSelected = Str::startsWith($message, '1');
-        $checkIfSwahiliIsSelected = Str::startsWith($message, '2');
+        $checkIfEnglishIsSelected = Str::startsWith($message,[ '1']);
+        $checkIfSwahiliIsSelected = Str::startsWith($message, ['2']);
 
         //age check
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
@@ -232,8 +232,8 @@ class SMSController extends Controller
         $checkIfLanguageInEnglish = Str::containsAll($message, ['My', 'name', 'is']);
 
         //gender check
-        $checkIfMale = Str::endsWith($message, '3');
-        $checkIfFemale = Str::endsWith($message, '4');
+        $checkIfMale = Str::startsWith($message, ['3']);
+        $checkIfFemale = Str::startsWith($message, ['4']);
 
         //region check
         $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
@@ -310,11 +310,11 @@ class SMSController extends Controller
                 $gbvController = new GBVController();
                 $gbvController->gbvB($phone);
                 break;
-            case Str::startsWith($message, '11'):
+            case Str::containsAll($message, ['11']):
                 $gbvController = new GBVController();
                 $gbvController->gbvC($phone);
                 break;
-            case Str::startsWith($message, '12'):
+            case Str::containsAll($message, ['12']):
                 $gbvController = new GBVController();
                 $gbvController->gbvD($phone);
                 break;
