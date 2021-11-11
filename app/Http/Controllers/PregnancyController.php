@@ -38,7 +38,8 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "- Lack of information about sexual and reproductive health
+             "Drivers to teenage pregnancy:
+             \n - Lack of information about sexual and reproductive health
              \n - Family and community pressure that lead to early marriage,
              \n - School dropout,
              \n - Sexual violence or child rape,
@@ -50,7 +51,8 @@ class PregnancyController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "- Kukosa elimu ya afya ya uzazi
+        "Vitu vinavyopelekea kupata mimba za utotoni:
+        \n - Kukosa elimu ya afya ya uzazi
         \n - Shinikizo la familia na jamii kuolewa katika umri mdogo,
         \n - Kukatisha masomo,
         \n - Ukatili wa kingono au kubakwa,
@@ -78,7 +80,8 @@ class PregnancyController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "- Kutoona siku zako za hedhi au kupata hedhi yam matone matone,
+        "Dalili za utoto ni: \n
+         - Kutoona siku zako za hedhi au kupata hedhi yam matone matone,
        \n - Matiti kuongezeka ukubwa na wakati mwingine yanauma,
        \n - Kichefuchefu au kutapika na mara nyingi asubuhi,
        \n - Kuhisi kizunguzungu na/au kuzimia,
