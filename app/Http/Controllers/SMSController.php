@@ -223,6 +223,29 @@ class SMSController extends Controller
         $checkIfEnglishIsSelected = preg_match("~\b1\b~",$message);
         $checkIfSwahiliIsSelected = preg_match("~\b2\b~",$message);
 
+        $checkENG = Str::startsWith($message, ['ENG']);
+        $checkSW = Str::startsWith($message, ['SW']);
+
+        if($checkENG){
+            Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
+            return $this->sendSMS($phone, "You have selected English as your langague. Choose which ones below would you like to know more about: 
+            \n 5 - Gender based violence
+            \n 6 - Child Marriage
+            \n 7 - Human Immunodefiency Virus
+            \n 8 - Teenage Pregnancy
+            \n\n To Change Language, text ENG for English language or SW for Swahili language.");
+        }
+
+        if($checkSW){
+            Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
+            return $this->sendSMS($phone, "Umechagua Kiswahili kama lugha yako.  Chagua kati ya topic zipi unataka kujua zaidi:
+            \n 5 - Ukatili wa kijinsia (UWAKI)
+            \n 6 - Ndoa za utotoni
+            \n 7 - Virusi vya Ukimwi
+            \n 8 - Mimba za utotoni
+            \n\n Kubadilisha lugha, chagua ENG kupata Kiingereza, au SW kupata Kiswahili.");
+        }
+
         //age check
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
         $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]); //
