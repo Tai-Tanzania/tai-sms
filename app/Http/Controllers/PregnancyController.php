@@ -19,7 +19,7 @@ class PregnancyController extends Controller
             \n 23 - Drivers to teenage pregnancy.
             \n 24 - Signs of pregnancy/ How will I know if I\’m pregnant?
             \n 25 - Effects of teenage pregnancies.
-            \n 26 - Preventive Measure of teenage pregnancies/ How can I prevent myself rom getting pregnant?");
+            \n 26 - Preventive Measures of teenage pregnancies/ How can I prevent myself rom getting pregnant?");
         }
 
         return $smsController->sendSMS($phone, "Mimba za utotoni ni ujauzito anaoupata msichana mwenye umri chini ya miaka 20.
@@ -27,7 +27,7 @@ class PregnancyController extends Controller
          Chagua nini unataka kujua zaidi: 
         \n 23 - Vitu gani vinaweza kupelekea kupata mimba za utotoni?
         \n 24 - Dalili za ujauzito/ Nitajujae kama nina ujauzito?
-        \n 25 - Madhara ya mimba za utototoni
+        \n 25 - Madhara ya mimba za utotoni
         \n 26 - Jinsi ya kuzuia mimba za utotoni/ Ninawezaje kuepuka mimba za utotoni?"); 
     }
 
@@ -70,7 +70,8 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "- Missed or very light menstrual period,
+             "Signs of pregnancy are:
+             \n - Missed or very light menstrual period,
              \n - Breast tenderness,
              \n - Nausea or vomiting, often in the morning,
              \n - Feeling dizzy and fainting,
@@ -97,7 +98,8 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "- High risk of Infant and maternal mortality
+             " Effects of teenage pregnancies are:
+             \n - High risk of Infant and maternal mortality
              \n - High chances of premature infants
              \n - High chances of getting eclampsia which might lead to death.
              \n - High chances of getting fistula.
@@ -107,7 +109,8 @@ class PregnancyController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "- Unahatarisha uhai wako pamoja na wa mtoto,
+        "Madhara ya mimba za utotoni ni:
+         \n - Unahatarisha uhai wako pamoja na wa mtoto,
          \n - Kuna uwezekano mkubwa wa mtoto kuzaliwa njiti,
          \n - Kupata kifafa cha mimba ambacho huweza kusababisha kifo cha mama na/au mtoto,
          \n - Uwezekano mkubwa wa kupata tatizo la fistula,
@@ -123,7 +126,8 @@ class PregnancyController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "- Seek right information on sexual reproductive health in health centers. 
+             "Preventive Measures of teenage pregnancies:
+             \n - Seek right information on sexual reproductive health in health centers. 
              \n - Open up to a trusted person such as parent, health care provider etc. 
              \n - Avoid being tempted with luxurious goods such as money, transport lifts, mobile phones etc.
              \n - Avoid the use of alcohol and illicit drugs which may lead to unsafe sex. 
@@ -134,7 +138,8 @@ class PregnancyController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "- Tafuta taarifa sahihi kuhusu afya ya uzazi kutoka kwenye kituo cha afya,
+        "Jinsi ya kuzuia mimba za utotoni:
+        \n - Tafuta taarifa sahihi kuhusu afya ya uzazi kutoka kwenye kituo cha afya,
         \n - Kuwa huru kuongea na mtu unaemuamini mfano mzazi au mtaalamu wa afya,
         \n - Epuka tamaa ya vitu mfano pesa, lifti n.k,
         \n - Epuka matumizi ya vilevi yanayochochea kufanya ngono zembe,
