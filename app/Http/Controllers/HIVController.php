@@ -14,23 +14,23 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, "HIV is a parasite that causes AIDS by attacking the body\'s immune system. When a person's immune system is weakened it causes the body to fail to fight HIV and thus allow opportunistic infections to penetrate more easily. Choose what you want to know more about: 
-            \n HIV A. Myth and misconceptions about HIV
-            \n HIV B. How HIV is transmitted
-            \n HIV C. Effects of HIV/AIDS
-            \n HIV D. Risk behaviours that may lead to HIV infection
-            \n HIV E. Signs and Symptoms of HIV
-            \n HIV F. HIV/AIDS testing 
-            \n HIV G. Preventive measures of HIV/AIDS");
+            \n 14 -  Myth and misconceptions about HIV
+            \n 15 - How HIV is transmitted
+            \n 16 - Effects of HIV/AIDS
+            \n 17 - Risk behaviours that may lead to HIV infection
+            \n 18 - Signs and Symptoms of HIV
+            \n 19 - HIV/AIDS testing 
+            \n 20 - Preventive measures of HIV/AIDS");
         }
 
         return $smsController->sendSMS($phone, "VVU ni vimelea vinavyosababisha hali ya UKIMWI kwa kushambulia mfumo wa kinga ya mwili. Kinga ya mwili wa mtu inaposhuka husababisha mwili kushindwa kupambana na VVU na hivyo kuruhusu magonjwa nyemelezi kupenya kirahisi. Chagua nini unatataka kujua zaidi kuhusu VVU: 
-         \n HIV A. Imani potofu kuhusu VVU
-         \n HIV B. Mtu anambukizwajie VVU?
-         \n HIV C. Madhara ya Ukimwi
-         \n HIV D. Tabia hatarishi zinazopelekea maambukizi ya VVU
-         \n HIV E. Ishara na dalili za VVU/UKIMWI
-         \n HIV F. Upimaji wa VVU/UKIMWI
-         \n HIV G. Jinsi ya kuzuia maambukizi ya virusi vya UKIMWI");  
+         \n 14 - Imani potofu kuhusu VVU
+         \n 15 - Mtu anambukizwajie VVU?
+         \n 16 - Madhara ya Ukimwi
+         \n 17 - Tabia hatarishi zinazopelekea maambukizi ya VVU
+         \n 18 - Ishara na dalili za VVU/UKIMWI
+         \n 19 - Upimaji wa VVU/UKIMWI
+         \n 20 - Jinsi ya kuzuia maambukizi ya virusi vya UKIMWI");  
     }
 
     public function hivA($phone){

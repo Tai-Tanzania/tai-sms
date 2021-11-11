@@ -216,33 +216,34 @@ class SMSController extends Controller
         }
 
         //greeting check
-        $checkIfGreeting = Str::startsWith($message , ['Hello', 'Habari', 'hello', 'habari']);
+        $checkIfGreetingEnglish = Str::startsWith($message , ['Hello', 'hello', 'SW']);
+        $checkIfGreetingSwahili = Str::startsWith($message , ['Habari', 'habari', 'ENG']);
 
         //language check
-        $checkIfEnglishIsSelected = Str::startsWith($message, 'A');
-        $checkIfSwahiliIsSelected = Str::startsWith($message, 'B');
+        $checkIfEnglishIsSelected = Str::startsWith($message, '1');
+        $checkIfSwahiliIsSelected = Str::startsWith($message, '2');
 
         //age check
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
-        $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]);
+        $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]); //
 
         //language check
-        $checkIfGreetingInswahili = Str::containsAll($message, ['Jina','langu', 'ni']);
-        $checkIfGreetingInEnglish = Str::containsAll($message, ['My', 'name', 'is']);
+        $checkIfLanguageInswahili = Str::containsAll($message, ['Jina','langu', 'ni']);
+        $checkIfLanguageInEnglish = Str::containsAll($message, ['My', 'name', 'is']);
 
         //gender check
-        $checkIfMale = Str::endsWith($message, 'C');
-        $checkIfFemale = Str::endsWith($message, 'D');
+        $checkIfMale = Str::endsWith($message, '3');
+        $checkIfFemale = Str::endsWith($message, '4');
 
         //region check
         $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
         $checkRegionInEnglish = Str::endsWith($message, 'region');
 
-        if($checkIfGreetingInswahili){
+        if($checkIfLanguageInswahili){
            return $this->saveNameInSwahili($phone, $message);
         }
 
-        if($checkIfGreetingInEnglish){
+        if($checkIfLanguageInEnglish){
             return $this->saveNameInEnglish($phone, $message);
         }
 
@@ -276,122 +277,125 @@ class SMSController extends Controller
             return $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
         }
 
+        if($checkIfGreetingEnglish){
+            return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Choose which ones below would you like to know more about: 
+            \n 5 - Gender based violence
+            \n 6 - Child Marriage
+            \n 7 - Human Immunodefiency Virus
+            \n 8 - Teenage Pregnancy
+            \n\n To Change Language, text ENG for English language or SW for Swahili language.
+            ");
+        }
+
+        if($checkIfGreetingSwahili){
+            return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya topic zipi unataka kujua zaidi:
+            \n 5 - Ukatili wa kijinsia (UWAKI)
+            \n 6 - Ndoa za utotoni
+            \n 7 - Virusi vya Ukimwi
+            \n 8 - Mimba za utotoni
+            \n\n Kubadilisha lugha, chagua ENG kupata Kiingereza, au SW kupata Kiswahili
+            ");
+        }
 
         switch ($message) {
-            case Str::endsWith($message, 'GBV'):
+            case Str::startsWith($message, '5'):
                 $gbvController = new GBVController();
                 $gbvController->index($phone);
                 break;
-            case Str::containsAll($message, ['GBV', 'A']):
+            case Str::startsWith($message, '9'):
                 $gbvController = new GBVController();
                 $gbvController->gbvA($phone);
                 break;
-            case Str::containsAll($message, ['GBV','B']):
+            case Str::startsWith($message,'10'):
                 $gbvController = new GBVController();
                 $gbvController->gbvB($phone);
                 break;
-            case Str::containsAll($message, ['GBV','C']):
+            case Str::startsWith($message, '11'):
                 $gbvController = new GBVController();
                 $gbvController->gbvC($phone);
                 break;
-            case Str::containsAll($message, ['GBV','D']):
+            case Str::startsWith($message, '12'):
                 $gbvController = new GBVController();
                 $gbvController->gbvD($phone);
                 break;
-            case Str::containsAll($message, ['GBV', 'E']):
+            case Str::startsWith($message, '13'):
                 $gbvController = new GBVController();
                 $gbvController->gbvE($phone);
                 break;
-            case Str::endsWith($message, 'HIV'):
+            case Str::startsWith($message, '6'):
                 $hivController = new HIVController();
                 $hivController->index($phone);
                 break;
-            case Str::containsAll($message, ['HIV', 'A']):
+            case Str::startsWith($message, '14'):
                 $hivController = new HIVController();
                 $hivController->hivA($phone);
                 break;
-            case Str::containsAll($message, ['HIV', 'B']):
+            case Str::startsWith($message,'15'):
                 $hivController = new HIVController();
                 $hivController->hivB($phone);
                 break;
-            case Str::containsAll($message, ['HIV', 'C']):
+            case Str::startsWith($message,'16'):
                 $hivController = new HIVController();
                 $hivController->hivC($phone);
                 break;
-            case Str::containsAll($message, ['HIV','D']):
+            case Str::startsWith($message,'17'):
                 $hivController = new HIVController();
                 $hivController->hivD($phone);
                 break;
-            case Str::containsAll($message, ['HIV','E']):
+            case Str::startsWith($message,'18'):
                 $hivController = new HIVController();
                 $hivController->hivE($phone);
                 break;
-            case Str::containsAll($message, ['HIV', 'F']):
+            case Str::startsWith($message,'19'):
                 $hivController = new HIVController();
                 $hivController->hivF($phone);
                 break;
-            case Str::containsAll($message, ['HIV','G']):
+            case Str::startsWith($message,'20'):
                 $hivController = new HIVController();
                 $hivController->hivG($phone);
                 break;
-            case Str::endsWith($message, 'CM'):
+            case Str::startsWith($message, '7'):
                 $cmController = new MarriageController();
                 $cmController->index($phone);
                 break;
-            case Str::containsAll($message, ['CM','A']):
+            case Str::startsWith($message, '21'):
                 $cmController = new MarriageController();
                 $cmController->cmA($phone);
                 break;
-            case Str::containsAll($message, ['CM','B']):
+            case Str::startsWith($message, '22'):
                 $cmController = new MarriageController();
                 $cmController->cmB($phone);
                 break;
-            case Str::endsWith($message, 'TP'):
+            case Str::startsWith($message, '8'):
                 $pcController = new PregnancyController();
                 $pcController->index($phone);
                 break;
-            case Str::containsAll($message, ['TP','A']):
+            case Str::startsWith($message, '23'):
                 $pcController = new PregnancyController();
                 $pcController->pcA($phone);
                 break;
-            case Str::containsAll($message, ['TP','B']):
+            case Str::startsWith($message, '24'):
                 $pcController = new PregnancyController();
                 $pcController->pcB($phone);
                 break;
-            case Str::containsAll($message, ['TP','C']):
+            case Str::startsWith($message, '25'):
                 $pcController = new PregnancyController();
                 $pcController->pcC($phone);
                 break;
-            case Str::containsAll($message, ['TP','D']):
+            case Str::startsWith($message, '26'):
                 $pcController = new PregnancyController();
                 $pcController->pcD($phone);
                 break;
             default:
-                return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Choose which ones below would you like to know more about: 
-                \n GBV . Gender based violence
-                \n CM . Child Marriage
-                \n HIV . Human Immunodefiency Virus
-                \n TP . Teenage Pregnancy");
+                return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya topic zipi unataka kujua zaidi:
+                \n 5 - Ukatili wa kijinsia (UWAKI)
+                \n 6 - Ndoa za utotoni
+                \n 7 - Virusi vya Ukimwi
+                \n 8 - Mimba za utotoni
+                \n\n Kubadilisha lugha, chagua ENG kupata Kiingereza, au SW kupata Kiswahili
+                ");
                 break;
         }
-
-        if($checkIfGreeting){
-
-            $b = Beneficiary::where('phone', $phone)->first();
-
-            // Message::create([
-            //     'from' => $request->input('from'),
-            //     'sms' => $request->input('message.text'),
-            //     'to' =>  $request->input('to'),
-            //     'transaction_id' => $request->input('transaction_id'),
-            //     'beneficiary_id' => $b->id
-            // ]);
-
-            //send greeting sms
-            return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal.");
-        }
-
-            // return \response()->json('success', 200);
 
     }
     

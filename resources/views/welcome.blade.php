@@ -42,7 +42,7 @@
 
             <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true"
                 class="lead text-white my-4"
-                x-text="eng ? 'Get engaged with Tai Tanzania! All information on sexual reproductive health is now at the grasp of your fingertips.' : 'Pata uchumba na Tai Tanzania! Taarifa zote kuhusu afya ya uzazi sasa ziko mikononi mwako.' ">
+                x-text="eng ? 'Get engaged with Tai Tanzania! All information on sexual reproductive health is now at the grasp of your fingertips.' : 'Pata ujumbe na Tai Tanzania! Taarifa zote kuhusu afya ya uzazi sasa ziko mikononi mwako.' ">
             </p>
 
             <a href="#" x-text="eng ? 'Text us now': 'Tutumie ujumbe sasa'" data-aos="fade" data-aos-easing="linear"

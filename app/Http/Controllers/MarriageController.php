@@ -14,13 +14,13 @@ class MarriageController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, "Child marriage refers to any formal marriage or informal union between a child under the age of 18 and an adult or another child. Choose what you want to know more about: 
-            \n CM A. What are the consequences for child marriage?
-            \n CM B. Call for action for child marriage/ What can I do to prevent child marriage?");
+            \n 21 - What are the consequences for child marriage?
+            \n 22 - Call for action for child marriage/ What can I do to prevent child marriage?");
         }
 
-        return $smsController->sendSMS($phone, "Ndoa ya utotoni inarejelea ndoa yoyote rasmi au muungano usio rasmi kati ya mtoto aliye chini ya umri wa miaka 18 na mtu mzima au mtoto mwingine. Chagua nini unatataka kujua zaidi kuhusu Ndoa za utotoni: 
-         \n CM A. Yapi ni madhara ya ndoa za utotoni?
-         \n CM B. Nifanye nini kuzuia ndoa za utotoni?");  
+        return $smsController->sendSMS($phone, "Ndoa za utotoni inarejelea ndoa yoyote rasmi au muungano usio rasmi kati ya mtoto aliye chini ya umri wa miaka 18 na mtu mzima au mtoto mwingine. Chagua nini unatataka kujua zaidi kuhusu Ndoa za utotoni: 
+         \n 21 - Yapi ni madhara ya ndoa za utotoni?
+         \n 22 - Nifanye nini kuzuia ndoa za utotoni?");  
     }
 
     public function cmA($phone){

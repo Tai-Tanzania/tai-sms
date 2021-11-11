@@ -16,19 +16,19 @@ class PregnancyController extends Controller
             return $smsController->sendSMS($phone, "Teenage pregnancy  occurs to adolescent girl under 20 years of age. 
              Statistics shows that, one in every four adolescent girls under 18 years is pregnant or has given birth.    
              Choose what you want to know more about: 
-            \n TP A. Drivers to teenage pregnancy.
-            \n TP B. Signs of pregnancy/ How will I know if I\’m pregnant?
-            \n TP C. Effects of teenage pregnancies.
-            \n TP D. Preventive Measure of teenage pregnancies/ How can I prevent myself rom getting pregnant?");
+            \n 23 - Drivers to teenage pregnancy.
+            \n 24 - Signs of pregnancy/ How will I know if I\’m pregnant?
+            \n 25 - Effects of teenage pregnancies.
+            \n 26 - Preventive Measure of teenage pregnancies/ How can I prevent myself rom getting pregnant?");
         }
 
         return $smsController->sendSMS($phone, "Mimba za utotoni ni ujauzito anaoupata msichana mwenye umri chini ya miaka 20.
          Takwimu zinaonesha katika wasichana wanne wenye umri chini ya miaka 18 mmoja huwa ni mjamzito au tayari ameshazaa.         
          Chagua nini unataka kujua zaidi: 
-        \n TP A. Vitu gani vinaweza kupelekea kupata mimba za utotoni?
-        \n TP B. Dalili za ujauzito/ Nitajujae kama nina ujauzito?
-        \n TP C. Madhara ya mimba za utototoni
-        \n TP D. Jinsi ya kuzuia mimba za utotoni/ Ninawezaje kuepuka mimba za utotoni?"); 
+        \n 23 - Vitu gani vinaweza kupelekea kupata mimba za utotoni?
+        \n 24 - Dalili za ujauzito/ Nitajujae kama nina ujauzito?
+        \n 25 - Madhara ya mimba za utototoni
+        \n 26 - Jinsi ya kuzuia mimba za utotoni/ Ninawezaje kuepuka mimba za utotoni?"); 
     }
 
 

@@ -21,21 +21,21 @@ class GBVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, "GBV/VAC is any harmful act committed against a woman, man or child intended to harm body or psychology or dignity based on gender. Choose what you want to know more about: 
-            \n GBV A - Myth about GBV
-            \n GBV B - Misconceptions on GBV
-            \n GBV C - Effects of GBV & VAC?
-            \n GBV D - GBV indicators /What are indicators of violence against children?
-            \n GBV E - What to do to end gender based violence (GBV)?");
+            \n 9 - Myth about GBV
+            \n 10 - Misconceptions on GBV
+            \n 11 - Effects of GBV & VAC?
+            \n 12 - GBV indicators /What are indicators of violence against children?
+            \n 13 - What to do to end gender based violence (GBV)?");
         }
 
         return $smsController->sendSMS($phone, "Ukatili wa kijinsia (UWAKI) ni kitendo chochote 
         cha kikatili anachofanyiwa mwanamke, mwanaume au mtoto chenye lengo la kudhuru mwili,
          saikolojia au utu wake kutokana na jinsia yake. Chagua nini unatataka kujua zaidi kuhusu UWAKI: 
-         \n GBV A - Dhana kuhusu UWAKI
-         \n GBV B - Dhana potofu kuhusu UWAKI
-         \n GBV C - Athari za ukatili wa kijinsia na watoto(UWAKI)
-         \n GBV D - Viashiria vya unyanyasai kwa watoto/Nitajuaje kama nafanyiwa UWAKI?
-         \n GBV E - Nianye nini kuepuka ukatili wa kijinsia na watoto (UWAKI)?");   
+         \n 9 - Dhana kuhusu UWAKI
+         \n 10 - Dhana potofu kuhusu UWAKI
+         \n 11 - Athari za ukatili wa kijinsia na watoto(UWAKI)
+         \n 12 - Viashiria vya unyanyasai kwa watoto/Nitajuaje kama nafanyiwa UWAKI?
+         \n 13 - Nianye nini kuepuka ukatili wa kijinsia na watoto (UWAKI)?");   
     }
     
     /**
