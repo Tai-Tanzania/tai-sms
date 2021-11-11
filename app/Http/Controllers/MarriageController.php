@@ -29,7 +29,7 @@ class MarriageController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "consequences for child marriage are such as:
+             "Consequences for child marriage are such as:
             \n - Exposure to domestic and sexual violence from a husband.
             \n - Teenage pregnancy that might increase the chance for negative health impacts such as maternal and infant death.
             \n - Lack of education due to school dropout
@@ -38,7 +38,7 @@ class MarriageController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "madhara ya ndoa za utotoni ni kama:
+        "Madhara ya ndoa za utotoni ni kama:
         \n - Unyanyasaji wa majumbani na kingono kutoka kwa mume.
         \n - Mimba za utotoni zinazoweza kuongeza athari mbaya kiafya kama vile kifo cha mama na mtoto,
         \n - Ukosefu wa elimu kwa sababu ya kuacha shule

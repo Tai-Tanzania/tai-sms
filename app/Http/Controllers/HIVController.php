@@ -172,7 +172,7 @@ class HIVController extends Controller
 
         if ($user->language_id ==1){
             return $smsController->sendSMS($phone,
-            " Preventive measures of HIV/AIDS:
+            "Preventive measures of HIV/AIDS:
            \n - Abstain from sex at a young age,
            \n - Use condoms correctly and consistently
            \n - Avoid being influenced by peer pressure on sexual practices, alcohol, and drug use.

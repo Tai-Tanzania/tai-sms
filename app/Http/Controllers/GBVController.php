@@ -93,7 +93,7 @@ class GBVController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "  Dhana potofu kuhusu UWAKI ni:
+        "Dhana potofu kuhusu UWAKI ni:
         \n - Endapo nitamwambia mtu kwamba ninanyanyaswa nitapigwa au kulaumiwa,
         \n - Endapo nitamwambia mtu kwamba ninanyanyaswa, hakuna atakayeniamini,
         \n - Endapo nitambwambia mtu kwamba ninanyanyaswa, mkosaji anaweza kunidhuru,
@@ -179,7 +179,7 @@ class GBVController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-            "nini kufanya kuepuka ukatili wa kijinsia na watoto (UWAKI):
+            "Nini kufanya kuepuka ukatili wa kijinsia na watoto (UWAKI):
             \n - Toa taarifa kwa mtu unayemuamini (mzazi, mwalimu, kiongozi wa dini) au dawati la jinsia kwenye kituo cha polisi kilichopo karibu,
             \n - Epuka mazingira hatarishi,
             \n - Epuka kupokea zawadi au fedha kutoka kwa mtu usiyemahamu, hii inaweza kukupelekea ukatili,
