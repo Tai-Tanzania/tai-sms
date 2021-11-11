@@ -301,6 +301,7 @@ class SMSController extends Controller
         }
 
         if($checkIfGreetingEnglish){
+            Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
             return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Choose which ones below would you like to know more about: 
             \n 5 - Gender based violence
             \n 6 - Child Marriage
@@ -311,6 +312,7 @@ class SMSController extends Controller
         }
 
         if($checkIfGreetingSwahili){
+            Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
             return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya topic zipi unataka kujua zaidi:
             \n 5 - Ukatili wa kijinsia (UWAKI)
             \n 6 - Ndoa za utotoni
