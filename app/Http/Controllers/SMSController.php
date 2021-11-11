@@ -229,20 +229,20 @@ class SMSController extends Controller
         if($checkENG){
             Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
             return $this->sendSMS($phone, "You have selected English as your langague. Choose which ones below would you like to know more about: 
-            \n 5 - Gender based violence
-            \n 6 - Child Marriage
-            \n 7 - Human Immunodefiency Virus
-            \n 8 - Teenage Pregnancy
+            \n Choose 5 to know more about Gender based violence
+            \n Choose 6 to know more about Child Marriage
+            \n Choose 7 to know more about Human Immunodefiency Virus
+            \n Choose 8 to know more about Teenage Pregnancy
             \n\n To Change Language, text ENG for English language or SW for Swahili language.");
         }
 
         if($checkSW){
             Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
             return $this->sendSMS($phone, "Umechagua Kiswahili kama lugha yako.  Chagua kati ya topic zipi unataka kujua zaidi:
-            \n 5 - Ukatili wa kijinsia (UWAKI)
-            \n 6 - Ndoa za utotoni
-            \n 7 - Virusi vya Ukimwi
-            \n 8 - Mimba za utotoni
+            \n Chagua 5 kujua zaidi kuhusu Ukatili wa kijinsia (UWAKI)
+            \n Chagua 6 kujua zaidi kuhusu Ndoa za utotoni
+            \n Chagua 7 kujua zaidi kuhusu Virusi vya Ukimwi
+            \n Chagua 8 kujua zaidi kuhusu Mimba za utotoni
             \n\n Kubadilisha lugha, chagua ENG kupata Kiingereza, au SW kupata Kiswahili.");
         }
 
@@ -303,10 +303,10 @@ class SMSController extends Controller
         if($checkIfGreetingEnglish){
             Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
             return $this->sendSMS($request->input('from'), "Greetings! Welcome back to Tai SMS portal. Choose which ones below would you like to know more about: 
-            \n Choose 5 to know about Gender based violence
-            \n Choose 6 to know about Child Marriage
-            \n Choose 7 to know aboutHuman Immunodefiency Virus
-            \n Choose 8 to know about Teenage Pregnancy
+            \n Choose 5 to know more about Gender based violence
+            \n Choose 6 to know more about Child Marriage
+            \n Choose 7 to know more about Human Immunodefiency Virus
+            \n Choose 8 to know more about Teenage Pregnancy
             \n\n To Change Language, text ENG for English language or SW for Swahili language.
             ");
         }
@@ -314,10 +314,10 @@ class SMSController extends Controller
         if($checkIfGreetingSwahili){
             Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
             return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya topic zipi unataka kujua zaidi:
-            \n Chagua 5 kujua kuhusu Ukatili wa kijinsia (UWAKI)
-            \n Chagua 6 kujua kuhusu Ndoa za utotoni
-            \n Chagua 7 kujua kuhusu Virusi vya Ukimwi
-            \n Chagua 8 kujua kuhusuMimba za utotoni
+            \n Chagua 5 kujua zaidi kuhusu Ukatili wa kijinsia (UWAKI)
+            \n Chagua 6 kujua zaidi kuhusu Ndoa za utotoni
+            \n Chagua 7 kujua zaidi kuhusu Virusi vya Ukimwi
+            \n Chagua 8 kujua zaidi kuhusu Mimba za utotoni
             \n\n Kubadilisha lugha, chagua ENG kupata Kiingereza, au SW kupata Kiswahili
             ");
         }
