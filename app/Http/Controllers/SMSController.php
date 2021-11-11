@@ -220,8 +220,8 @@ class SMSController extends Controller
         $checkIfGreetingSwahili = Str::startsWith($message , ['Habari', 'habari', 'ENG']);
 
         //language check
-        $checkIfEnglishIsSelected = Str::startsWith($message, '1');
-        $checkIfSwahiliIsSelected = Str::startsWith($message, '2');
+        $checkIfEnglishIsSelected = preg_match("~\b1\b~",$message);
+        $checkIfSwahiliIsSelected = preg_match("~\b2\b~",$message);
 
         //age check
         $checkAgeInSwahili = Str::containsAll($message, ['Nina','umri','wa','miaka' ]);
