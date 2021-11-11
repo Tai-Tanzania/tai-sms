@@ -51,7 +51,8 @@ class GBVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, 
-            "- Men have the right to control women behavior and discipline them,
+            "Myth about GBV are:
+            \n - Men have the right to control women behavior and discipline them,
             \n - Violence is normal and acceptable in a relationship,
             \n - Victims of violence allow to happen to them,
             \n - Only small percentage of adolescents are affected by violence,
@@ -61,7 +62,8 @@ class GBVController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "- Mwanaume ana haki ya kudhibiti tabia za mwanamke na kumshikisha adabu
+        "Dhana kuhusu UWAKI ni:
+        \n - Mwanaume ana haki ya kudhibiti tabia za mwanamke na kumshikisha adabu
         \n - Ukatili ni jambo la kawaida na unakubalika kwenye mahusiano.
         \n - Wahanga wa UWAKI wanajitakia
         \n - Ni asilimia chache ya vijana wanaoathirika na ukatili
@@ -82,7 +84,8 @@ class GBVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, 
-            "- If I tell someone that I\’m being abused I might be beaten or blamed,
+            "Misconceptions on GBV are:
+            \n - If I tell someone that I\’m being abused I might be beaten or blamed,
             \n - If I tell someone that I\’m being abused they will not believe me,
             \n - If I tell someone that I\’m being abused the culprit might harm me,
             \n - If I open-up that I\’m being abused I might be disowned by my family, and
@@ -90,7 +93,8 @@ class GBVController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        " - Endapo nitamwambia mtu kwamba ninanyanyaswa nitapigwa au kulaumiwa,
+        "Dhana potofu kuhusu UWAKI ni:
+        \n - Endapo nitamwambia mtu kwamba ninanyanyaswa nitapigwa au kulaumiwa,
         \n - Endapo nitamwambia mtu kwamba ninanyanyaswa, hakuna atakayeniamini,
         \n - Endapo nitambwambia mtu kwamba ninanyanyaswa, mkosaji anaweza kunidhuru,
         \n - Endapo nitasema kwamba ninanyanyaswa, ninaweza kutengwa na familia yangu, na
@@ -109,7 +113,8 @@ class GBVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, 
-            "- Permanent disability,
+            "Effects of GBV & VAC are:
+            \n - Permanent disability,
             \n - Mental health problems such as depression, anxiety,
             \n - Chronic health problems such as STDs, spread of HIV/AIDS, 
             \n - Adapting bad behaviors as a way of escaping violence such as use of alcohol,
@@ -118,7 +123,8 @@ class GBVController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "-	Ulemavu wa kudumu,
+        "Athari za ukatili wa kijinsia na watoto(UWAKI) ni:
+        \n - Ulemavu wa kudumu,
         \n - Matatizo ya afya ya akili mano, hofu na msongo wa mawazo,
         \n - Matatizo sugu ya kiafya mfano, magonjwa ya zinaa, kuenea kwa UKIMWI,
         \n - Kuiga tabia hatarishi ili kukwepa changamoto za ukatili mfano matumizi ya vilevi,
@@ -138,13 +144,15 @@ class GBVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, 
-                "- Physical violence such as beaten, threaten with weapons etc.
+                "GBV and violence against children indicators are:
+                \n - Physical violence such as beaten, threaten with weapons etc.
                 \n - Emotional violence such as being called bad names, insulted, abandoned.
                 \n - Sexual violence such being raped, being touched without your consent.");
         }
 
         return $smsController->sendSMS($phone, 
-            "- Unyanyasai wa kimwili kama kupigwa, kutishiwa vitu, n.k,
+            "Viashiria vya unyanyasai kwa watoto na UWAKI ni:
+            \n- Unyanyasai wa kimwili kama kupigwa, kutishiwa vitu, n.k,
             \n - Unyanyasaji wa kihisia mano kuitwa majina, kutukanwa, kutelekezwa n.k, na
             \n - Unyanyasai wa kingono kama vile kubakwa, kushikwa bila ruhusa yako n.k.");
     }
@@ -161,7 +169,8 @@ class GBVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone, 
-                "- Tell a trusted adult (teacher, parent, religious leader) or report to the gender and children desk at the nearest police station,	
+                " What you can do to end gender based violence (GBV):
+                \n - Tell a trusted adult (teacher, parent, religious leader) or report to the gender and children desk at the nearest police station,	
                 \n - Avoid risk environment.
                 \n - Avoid accepting gifts or money from people you don\’t know, as it results to abuse.
                 \n - Scream to get help if someone tries to touch inappropriately or beating you.
@@ -170,7 +179,8 @@ class GBVController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-            "- Toa taarifa kwa mtu unayemuamini (mzazi, mwalimu, kiongozi wa dini) au dawati la jinsia kwenye kituo cha polisi kilichopo karibu,
+            "Nini kufanya kuepuka ukatili wa kijinsia na watoto (UWAKI):
+            \n - Toa taarifa kwa mtu unayemuamini (mzazi, mwalimu, kiongozi wa dini) au dawati la jinsia kwenye kituo cha polisi kilichopo karibu,
             \n - Epuka mazingira hatarishi,
             \n - Epuka kupokea zawadi au fedha kutoka kwa mtu usiyemahamu, hii inaweza kukupelekea ukatili,
             \n - Piga kelele kuomba msaada endapo mtu atakushika isivyofaa au kukupiga,

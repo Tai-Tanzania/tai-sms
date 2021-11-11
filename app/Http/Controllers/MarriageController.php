@@ -29,7 +29,8 @@ class MarriageController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "- Exposure to domestic and sexual violence from a husband.
+             "Consequences for child marriage are such as:
+            \n - Exposure to domestic and sexual violence from a husband.
             \n - Teenage pregnancy that might increase the chance for negative health impacts such as maternal and infant death.
             \n - Lack of education due to school dropout
             \n - Economic dependent, and
@@ -37,7 +38,8 @@ class MarriageController extends Controller
         }
 
         return $smsController->sendSMS($phone, 
-        "- Unyanyasaji wa majumbani na kingono kutoka kwa mume.
+        "Madhara ya ndoa za utotoni ni kama:
+        \n - Unyanyasaji wa majumbani na kingono kutoka kwa mume.
         \n - Mimba za utotoni zinazoweza kuongeza athari mbaya kiafya kama vile kifo cha mama na mtoto,
         \n - Ukosefu wa elimu kwa sababu ya kuacha shule
         \n - Kuwa tegemezi kiuchumi, na
@@ -50,13 +52,15 @@ class MarriageController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-             "- Focus should be on education and your wellbeing and not marriage.
+             "What i can  do to prevent child marriage:
+             \n - Focus should be on education and your wellbeing and not marriage.
              \n - As soon as you encounter or see any adolescent girl being forced to marriage report to relevant authorities such as gender desk, social welfare officer and others.
              \n - Speak out against child marriage to your family and the community.");
         }
 
         return $smsController->sendSMS($phone, 
-        "- Zingatia elimu na ustawi wako na sio ndoa.
+        "Nini nifanye kuzuia ndoa za utotoni:
+        \n - Zingatia elimu na ustawi wako na sio ndoa.
         \n - Toa taaria kwenye dawati la jinsia kwenye kituo chochote cha polisi, afisa ustawi wa jamii, endapo utalazimishwa kuolewa au kuona binti analazimishwa kuolewa.
         \n - Paza sauti kwa familia yako na jamii kukataa ndoa za utotoni");  
     }

@@ -39,7 +39,8 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-            "- Having multiple sexual partners is a sign of manhood or girls\’ beauty.
+            "Myth and misconceptions about HIV are:
+            \n - Having multiple sexual partners is a sign of manhood or girls\’ beauty.
             \n - HIV is for older people and not adolescents.
             \n - Not having multiple partners during my adolescence will enhance my sexual desire in my adulthood
             \n - Having multiple sexual partners is fashion (everyone is doing it)
@@ -48,7 +49,8 @@ class HIVController extends Controller
         }
 
         return $smsController->sendSMS($phone,
-            "- Kuwa na wapenzi wengi ndio uanamume au uzuri wa msichana.
+            " Imani potofu kuhusu VVU ni kama:
+            \n - Kuwa na wapenzi wengi ndio uanamume au uzuri wa msichana.
             \n - VVU huwapata watu wazima na sio vijana wa rika barehe.
             \n - Kutokuwa na wapenzi wengi nikiwa mdogo itaniongezea hamu ya mapenzi nikiwa mtu mzima.
             \n - Kuwa na wapenzi wengi ni kwenda na wakati (kila mtu anafanya hivyo).
@@ -61,14 +63,16 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-            "- Unprotected sexual intercourse with an infected partner,
+            "HIV is transmitted through:
+            \n - Unprotected sexual intercourse with an infected partner,
             \n - Exposure to infected blood and blood products like sharing of contaminated needles, razor blades, and other injecting equipment,
             \n - Infection from an HIV-positive mother to a baby born during pregnancy, childbirth or breastfeeding.
             \n - Certain body fluids like semen, and vaginal fluids from an infected person. ");
         }
 
         return $smsController->sendSMS($phone,
-            "- VVU inawezwa kuambukizwa kwa kufanya ngono zembe na mtu anayeishi na VVU
+            "Mtu anambukizwa VVU kupitia:
+            \n - VVU inawezwa kuambukizwa kwa kufanya ngono zembe na mtu anayeishi na VVU
             \n - Kwa njia ya damu yenye maambukizi ya VVU au vifaa vyenye damu ya maambukizi ya VVU kama kushirikiana vifaa vyenye ncha kali kama sindano, nyembe au vinginevyo.
             \n - Maambukizi kutoka kwa mama mwenye VVU kwenda kwa mtoto ambae ajazaliwa wakati wa ujauzito, kujifungua au kunyonyesha.
             \n - Majimaji fulani ya mwili kama shahawa, na maji maji ya ukeni kutoka kwa mtu aliyeambukizwa.
@@ -81,7 +85,8 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-            "- A person living with HIV/AIDS may have to regularly miss school to attend clinic appointments. This can affect their educational achievement and sense of fitting in with peers.
+            "Effects of HIV/AIDS are:
+            \n - A person living with HIV/AIDS may have to regularly miss school to attend clinic appointments. This can affect their educational achievement and sense of fitting in with peers.
             \n - A person living with HIV/AIDS may experience cognitive challenges such as learning difficulties and memory problems. 
             \n - A person with HIV/AIDS often stigmatized and discriminated
             \n - A person living with HIV/AIDS experiences emotional challenges such as anger, depression etc.           
@@ -89,7 +94,8 @@ class HIVController extends Controller
         }
 
         return $smsController->sendSMS($phone,
-            "- Mtu anayeishi VVU/UKIMWI anaweza kukosa masomo mara kwa mara kutokana na kulazimika kuhudhuria kliniki au kuwa na miadi na daktari.
+            "Madhara ya Ukimwi ni kama:
+            \n - Mtu anayeishi VVU/UKIMWI anaweza kukosa masomo mara kwa mara kutokana na kulazimika kuhudhuria kliniki au kuwa na miadi na daktari.
             \n - Mtu anayeishi na VVU/UKIMWI anaweza kupata changamoto za kiakili kama vile matatizo ya kujifunza na matatizo ya kumbukumbu.
             \n - Mtu aliye na VVU/UKIMWI mara nyingi hunyanyapaliwa na kubaguliwa.
             \n - Mtu anayeishi na VVU/UKIMWI hupata changamoto za kihisia kama vile hasira, mfadhaiko, n.k.
@@ -102,7 +108,8 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-            "- Having unprotected sex,
+            "Risk behaviours that may lead to HIV infection are such as:
+            \n - Having unprotected sex,
             \n - Having multiple partners,
             \n - Uses of drugs and alcohol,
             \n - Incorrect and inconsistence use of condom,
@@ -110,7 +117,8 @@ class HIVController extends Controller
         }
 
         return $smsController->sendSMS($phone,
-            "- Kufanya ngono bila kinga.
+            "Tabia hatarishi zinazopelekea maambukizi ya VVU ni kama
+            \n - Kufanya ngono bila kinga.
             \n - Kuwa na mwenza zaidi ya mmoja.
             \n - Matumizi ya madawa ya kulevya na pombe.
             \n - Matumizi yasiyo sahihi ya kondomu.
@@ -123,7 +131,8 @@ class HIVController extends Controller
 
         if($user->language_id == 1){
             return $smsController->sendSMS($phone,
-            "- Intermittent fever and chills.
+            "Signs and Symptoms of HIV are:
+           \n - Intermittent fever and chills.
            \n - Rashes,
            \n - Night sweats,
            \n - Intermittent muscle aches and fatigue
@@ -131,7 +140,8 @@ class HIVController extends Controller
         }
 
          return $smsController->sendSMS($phone,
-             "- Homa na baridi ya mara kwa mara,
+             "Ishara na dalili za VVU/UKIMWI ni kama:
+             \n - Homa na baridi ya mara kwa mara,
              \n - Vipele mwilini
              \n - Kutokwa na jasho usiku
              \n - Maumivu ya misuli ya hapa na pale na uchovu
@@ -144,13 +154,15 @@ class HIVController extends Controller
 
         if ($user->language_id ==1){
             return $smsController->sendSMS($phone,
-            "HIV testing services (HTS) are the gateway to access HIV care, treatment, prevention, and support services.
-             These services are free and voluntary and can be accessed in health care centers.");
+            " About HIV/AIDS testing:
+            \n - HIV testing services (HTS) are the gateway to access HIV care, treatment, prevention, and support services.
+                 These services are free and voluntary and can be accessed in health care centers.");
         }
 
         return $smsController->sendSMS($phone,
-        "Huduma za kupima VVU ni lango la kupata huduma za matunzo, matibabu, kinga na usaidizi wa VVU. 
-        Huduma hizi ni za bure na za hiari na zinaweza kupatikana katika vituo vya huduma za afya.");
+        "Kuhusu Upimaji wa VVU/UKIMWI:
+        \n - Huduma za kupima VVU ni lango la kupata huduma za matunzo, matibabu, kinga na usaidizi wa VVU. 
+             Huduma hizi ni za bure na za hiari na zinaweza kupatikana katika vituo vya huduma za afya.");
 
     }
 
@@ -160,7 +172,8 @@ class HIVController extends Controller
 
         if ($user->language_id ==1){
             return $smsController->sendSMS($phone,
-            "- Abstain from sex at a young age,
+            "Preventive measures of HIV/AIDS:
+           \n - Abstain from sex at a young age,
            \n - Use condoms correctly and consistently
            \n - Avoid being influenced by peer pressure on sexual practices, alcohol, and drug use.
            \n - Open up and seek advice from trusted persons such as parents, teachers, health workers, religious leaders, etc.
@@ -171,7 +184,8 @@ class HIVController extends Controller
         }
 
         return $smsController->sendSMS($phone,
-        "- Epuka ngono katika uri mdogo
+        "Jinsi ya kuzuia maambukizi ya virusi vya UKIMWI:
+       \n - Epuka ngono katika uri mdogo
        \n - Tumia kondomu kwa usahihi na kwa uthabiti
        \n - Epuka kuathiriwa na shinikizo rika juu ya vitendo vya ngono zembe, pombe, na matumizi ya madawa ya kulevya.
        \n - Funguka na tafuta ushauri kutoka kwa watu unaowaamini kama vile wazazi/walezi, waalimu, wahudumu wa afya n.k.
