@@ -1,5 +1,11 @@
 @component('layouts.dashboard')
 
+@if (session()->has('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+</div>
+@endif
+
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Beneficiaries</h1>
 <!-- DataTales Example -->
@@ -9,10 +15,43 @@
         <button class="btn btn-primary">
             Export
         </button>
-        <button class="btn btn-info">
+        <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
             Send Custom Message
         </button>
     </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Custom Message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/send-text" method="post">
+              @csrf
+              <div class="form-group mb-2">
+                  <label for="">Number</label>
+                  <input type="text" name="phone" class="form-control">
+              </div>
+              <div class="form-group mb-2">
+                  <label for="">Message</label>
+                  <textarea name="message" id="" cols="100%" rows="5"></textarea>
+              </div>
+              <div class="form-group mb-2">
+                  <button class="btn btn-success" type="submit">
+                      Send Message
+                  </button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

@@ -151,6 +151,12 @@ class SMSController extends Controller
         Alert::info('Welcome back! We will contact you.');
         return redirect()->back();
     }
+
+    public function sendTxt(Request $request){
+        $this->sendSMS($request->phone, $request->message);
+        session()->flash('success', 'Message sent successfully');
+        return \redirect()->back();
+    }
     
     /**
      * callback
