@@ -251,16 +251,16 @@ class SMSController extends Controller
         $checkAgeInEnglish = Str::containsAll($message, ['I', 'am', 'years', 'old' ]); //
 
         //language check
-        $checkIfLanguageInswahili = Str::containsAll($message, ['Jina','langu', 'ni']);
-        $checkIfLanguageInEnglish = Str::containsAll($message, ['My', 'name', 'is']);
+        $checkIfLanguageInswahili = Str::containsAll($message, ['Jina']);
+        $checkIfLanguageInEnglish = Str::containsAll($message, ['Name']);
 
         //gender check
         $checkIfMale = preg_match("~\b3\b~",$message);
         $checkIfFemale = preg_match("~\b4\b~",$message);
 
         //region check
-        $checkRegionInSwahili = Str::startsWith($message, 'Naishi');
-        $checkRegionInEnglish = Str::endsWith($message, 'region');
+        $checkRegionInSwahili = Str::startsWith($message, 'Mkoa');
+        $checkRegionInEnglish = Str::startsWith($message, 'Region');
 
         if($checkIfLanguageInswahili){
            return $this->saveNameInSwahili($phone, $message);
@@ -292,12 +292,12 @@ class SMSController extends Controller
 
         if($checkIfEnglishIsSelected){
             Beneficiary::where('phone', $phone)->update(['language_id' => 1]);
-            return $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type in starting with \"My name is ...\"");
+            return $this->sendSMS($phone, "You have chosen English as your language of choice. What is your name? Please type like the following \"Name Jacob Abdallah\"");
         }
 
         if($checkIfSwahiliIsSelected){
             Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
-            return $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kwa kuandika \"Jina langu ni ...\"");
+            return $this->sendSMS($phone, "Umechagua Swahili kama lugha yako. Je, kwa jina unaitwa nani? Anza kuandika jina lako kama kwa mfano \"Jina Jacob Abdallah\"");
         }
 
         if($checkIfGreetingEnglish){
@@ -413,10 +413,10 @@ class SMSController extends Controller
                 break;
             default:
                 return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya topic zipi unataka kujua zaidi:
-                \n 5 - Ukatili wa kijinsia (UWAKI)
-                \n 6 - Ndoa za utotoni
-                \n 7 - Virusi vya Ukimwi
-                \n 8 - Mimba za utotoni
+                \n Chagua 5 kujua zaidi kuhusu Ukatili wa kijinsia (UWAKI)
+                \n Chagua 6 kujua zaidi kuhusu Ndoa za utotoni
+                \n Chagua 7 kujua zaidi kuhusu Virusi vya Ukimwi
+                \n Chagua 8 kujua zaidi kuhusu Mimba za utotoni
                 \n\n Kubadilisha lugha, chagua ENG kupata Kiingereza, au SW kupata Kiswahili
                 ");
                 break;
@@ -432,13 +432,13 @@ class SMSController extends Controller
      * @return void
      */
     public function saveNameInSwahili($phone, $message){
-        Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'Jina langu ni')]);
-        return $this->sendSMS($phone, "Una umri wa miaka mingapi? Jibu kuanzia \"Nina umri wa miaka 20\" ukimalizia na idadi ya miaka yako.");
+        Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'Jina')]);
+        return $this->sendSMS($phone, "Una umri wa miaka mingapi? Jibu kama ifwatavyo \"Umri 20\"");
     }
 
     public function saveNameInEnglish($phone, $message){
-        Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'My name is')]);
-        return $this->sendSMS($phone, "How old are you? Your answer should be like \"I am 20 years old\".");
+        Beneficiary::where('phone', $phone)->update(['name' => Str::after($message, 'Name')]);
+        return $this->sendSMS($phone, "How old are you? Your answer should be like \"Age 20\".");
     }
     
     /**
@@ -449,43 +449,43 @@ class SMSController extends Controller
      * @return void
      */
     public function saveAgeInSwahili($phone, $message){
-        Beneficiary::where('phone', $phone)->update(['age' => Str::after($message, 'Nina umri wa miaka ')]);
-        return $this->sendSMS($phone, "Je, wewe ni jinsia gani? Jibu C kama ni ya kiume; D kama ya kike.");
+        Beneficiary::where('phone', $phone)->update(['age' => Str::after($message, 'Umri')]);
+        return $this->sendSMS($phone, "Je, wewe ni jinsia gani? Jibu 3 kama ni ya kiume; 4 kama ya kike.");
     }
 
     public function saveAgeInEnglish($phone, $message){
-        Beneficiary::where('phone', $phone)->update(['age' => Str::between($message, 'am', 'years')]);
+        Beneficiary::where('phone', $phone)->update(['age' => Str::after($message,'Age')]);
         return $this->sendSMS($phone, "What is your gender? Answer 3 if male; 4 if female.");
     }
 
     public function saveGender($phone,$message){
-        Str::endsWith($message, 'C') ?  
+        preg_match("~\b3\b~",$message) ?  
         Beneficiary::where('phone', $phone)->update(['gender' => 'male']) :
         Beneficiary::where('phone', $phone)->update(['gender' => 'female']);
 
         if(Beneficiary::where('phone', $phone)->pluck('language_id')->first() == 1){
-            return $this->sendSMS($phone, "What is the name of the region you reside in? Answer like \"Kigoma region\".");
+            return $this->sendSMS($phone, "What is the name of the region you reside in? Answer like \"Region Kigoma\".");
         } 
-        return $this->sendSMS($phone, "Unaishi mkoa gani? Jiba kama ifwatavyo: \"Naishi mkoa wa Kigoma\".");   
+        return $this->sendSMS($phone, "Unaishi mkoa gani? Jiba kama ifwatavyo: \"Mkoa Kigoma\".");   
     }
 
     public function saveRegionInSwahili($phone,$message){
-        Beneficiary::where('phone', $phone)->update(['location' => Str::after($message, 'Naishi mkoa wa')]);
+        Beneficiary::where('phone', $phone)->update(['location' => Str::after($message, 'Mkoa')]);
         return $this->sendSMS($phone, "Asante kwa kujibu maswali yetu. 
         Chagua Zipi kati ya vifwatavyo ungependa kujua zaidi:
-        \n GBV . Ukatili wa kijinsia na watoto 
-        \n CM . Ndoa za utotoni 
-        \n HIV . Virus Vya Ukimwi 
-        \n TP . Mimba za utotoni"); 
+            \n Chagua 5 kujua zaidi kuhusu Ukatili wa kijinsia (UWAKI)
+            \n Chagua 6 kujua zaidi kuhusu Ndoa za utotoni
+            \n Chagua 7 kujua zaidi kuhusu Virusi vya Ukimwi
+            \n Chagua 8 kujua zaidi kuhusu Mimba za utotoni"); 
     }
 
     public function saveRegionInEng($phone,$message){
-        Beneficiary::where('phone', $phone)->update(['location' => Str::beforeLast($message, 'region')]);
+        Beneficiary::where('phone', $phone)->update(['location' => Str::after($message, 'Region')]);
         return $this->sendSMS($phone, "Thanks for answering our questions. Choose which ones below would you like to know more about: 
-            \n GBV . Gender based violence
-            \n CM . Child Marriage
-            \n HIV . Human Immunodefiency Virus
-            \n TP . Teenage Pregnancy"); 
+            \n Choose 5 to know more about Gender based violence
+            \n Choose 6 to know more about Child Marriage
+            \n Choose 7 to know more about Human Immunodefiency Virus
+            \n Choose 8 to know more about Teenage Pregnancy"); 
     }
 
 }
