@@ -12,20 +12,20 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary"></h6>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#exportModal">
             Export
         </button>
-        <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+        <a class="btn btn-info" href="/exportBeneficiaries">
             Send Custom Message
-        </button>
+        </a>
     </div>
 
-    <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--  SMS Modal -->
+<div class="modal fade" id="smsModal" tabindex="-1" aria-labelledby="smsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered ">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Custom Message</h5>
+          <h5 class="modal-title" id="smsModalLabel">Custom Message</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -47,6 +47,25 @@
                   </button>
               </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="exportModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Export</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <!---code here--->
+
         </div>
       </div>
     </div>

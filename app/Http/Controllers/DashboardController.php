@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Message;
 use App\Models\Beneficiary;
+use App\Exports\BeneficiariesExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DashboardController extends Controller
 {
@@ -21,6 +23,10 @@ class DashboardController extends Controller
     public function beneficiaries(){
         $users = Beneficiary::with('lang')->get();
         return view('dashboard.beneficiaries', ['beneficiaries'=>$users]);
+    }
+
+    public function export(){
+        return Excel::download(new BeneficiariesExport, 'beneficiaries.xlsx');
     }
 
     public function messages(){

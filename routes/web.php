@@ -28,5 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::get('messages',[DashboardController::class,'messages']);
     Route::get('beneficiaries',[DashboardController::class,'beneficiaries']);
     Route::post('send-text',[SMSController::class,'sentTxt']);
+    Route::get('exportBeneficiaries', [DashboardController::class,'export']);
     Route::get('logout', [AuthController::class,'logout']);
 });
