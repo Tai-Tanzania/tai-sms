@@ -353,7 +353,7 @@ class SMSController extends Controller
                 $gbvController = new GBVController();
                 $gbvController->gbvE($phone);
                 break;
-            case Str::startsWith($message, '6'):
+            case Str::startsWith($message, '7'):
                 $hivController = new HIVController();
                 $hivController->index($phone);
                 break;
@@ -385,7 +385,7 @@ class SMSController extends Controller
                 $hivController = new HIVController();
                 $hivController->hivG($phone);
                 break;
-            case Str::startsWith($message, '7'):
+            case Str::startsWith($message, '6'):
                 $cmController = new MarriageController();
                 $cmController->index($phone);
                 break;
