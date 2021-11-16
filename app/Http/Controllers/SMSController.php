@@ -202,6 +202,10 @@ class SMSController extends Controller
         //checking if user is in the database
         $checkIfUserExistsInDB = Beneficiary::where('phone', $phone)->exists();
 
+        //greeting check
+        $checkIfGreetingEnglish = Str::startsWith($message , ['Hello', 'hello', 'Hi', 'hi']);
+        $checkIfGreetingSwahili = Str::startsWith($message , ['Habari', 'habari', 'Mambo', 'mambo']);
+
         if(!$checkIfUserExistsInDB){
 
             //create new user
@@ -217,13 +221,19 @@ class SMSController extends Controller
                 'beneficiary_id' => $b->id
             ]);
 
-            //send greeting SMS
-            return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type 1 to communicate in English or 2 to communicate in Swahili.");
-        }
+            if($checkIfGreetingEnglish){
+                $b->update(['language_id' => 1]);
+                return $this->sendSMS($phone, "Greetings! Welcome to Tai SMS portal. Type 1 to communicate in English or 2 to communicate in Swahili.");
+            }
 
-        //greeting check
-        $checkIfGreetingEnglish = Str::startsWith($message , ['Hello', 'hello', 'SW']);
-        $checkIfGreetingSwahili = Str::startsWith($message , ['Habari', 'habari', 'ENG']);
+            if($checkIfGreetingSwahili){
+                $b->update(['language_id' => 2]);
+                return $this->sendSMS($phone, "Karibu kwenye mfumo wa SMS wa Tai Tanzania. Jibu 1 kupata majibu kwa Kiingereza au 2 kupata majibu kwa Kiswahili.");
+            }
+
+            //send greeting SMS
+            return $this->sendSMS($phone, "Karibu kwenye mfumo wa SMS wa Tai Tanzania. Jibu 1 kupata majibu kwa Kiingereza au 2 kupata majibu kwa Kiswahili.");
+        }
 
         //language check
         $checkIfEnglishIsSelected = preg_match("~\b1\b~",$message);
