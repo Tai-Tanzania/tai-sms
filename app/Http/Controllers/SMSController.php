@@ -254,7 +254,7 @@ class SMSController extends Controller
 
         if($checkSW){
             Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
-            return $this->sendSMS($phone, "Umechagua Kiswahili kama lugha yako.  Chagua kati ya topic zipi unataka kujua zaidi:
+            return $this->sendSMS($phone, "Umechagua Kiswahili kama lugha yako.  Chagua kati ya mada zipi unataka kujua zaidi:
             \n Chagua 5 kujua zaidi kuhusu Ukatili wa kijinsia (UWAKI)
             \n Chagua 6 kujua zaidi kuhusu Ndoa za utotoni
             \n Chagua 7 kujua zaidi kuhusu Virusi vya Ukimwi
@@ -329,7 +329,7 @@ class SMSController extends Controller
 
         if($checkIfGreetingSwahili){
             Beneficiary::where('phone', $phone)->update(['language_id' => 2]);
-            return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya topic zipi unataka kujua zaidi:
+            return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya mada zipi unataka kujua zaidi:
             \n Chagua 5 kujua zaidi kuhusu Ukatili wa kijinsia (UWAKI)
             \n Chagua 6 kujua zaidi kuhusu Ndoa za utotoni
             \n Chagua 7 kujua zaidi kuhusu Virusi vya Ukimwi
@@ -428,7 +428,7 @@ class SMSController extends Controller
                 $pcController->pcD($phone);
                 break;
             default:
-                return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya topic zipi unataka kujua zaidi:
+                return $this->sendSMS($request->input('from'), "Karibu tena kwenye mfumo wa SMS wa Tai Tanzania. Chagua kati ya mada zipi unataka kujua zaidi:
                 \n Chagua 5 kujua zaidi kuhusu Ukatili wa kijinsia (UWAKI)
                 \n Chagua 6 kujua zaidi kuhusu Ndoa za utotoni
                 \n Chagua 7 kujua zaidi kuhusu Virusi vya Ukimwi

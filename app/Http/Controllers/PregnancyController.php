@@ -22,7 +22,7 @@ class PregnancyController extends Controller
             \n 26 - Preventive Measures of teenage pregnancies/ How can I prevent myself rom getting pregnant?");
         }
 
-        return $smsController->sendSMS($phone, "Mimba za utotoni ni ujauzito anaoupata msichana mwenye umri chini ya miaka 20.
+        return $smsController->sendSMS($phone, "Mimba za utotoni kutokea pale msichana wenye umri chini ya miaka 18.
          Takwimu zinaonesha katika wasichana wanne wenye umri chini ya miaka 18 mmoja huwa ni mjamzito au tayari ameshazaa.         
          Chagua nini unataka kujua zaidi: 
         \n 23 - Vitu gani vinaweza kupelekea kupata mimba za utotoni?
